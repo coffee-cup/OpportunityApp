@@ -6,8 +6,34 @@
 //  Copyright © 2016 FixCode. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    let transitionManager = TransitionManager()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let toView = segue.destinationViewController
+        toView.transitioningDelegate = transitionManager
+    }
+    
+    @IBAction func signInButtonDidTouch(sender: AnyObject) {
+        self.performSegueWithIdentifier("listSegue", sender: self)
+    }
+    
+    @IBAction func signUpButtonDidTouch(sender: AnyObject) {
+        self.performSegueWithIdentifier("listSegue", sender: self)
+    }
+
+    @IBAction func goButtonDidTouch(sender: AnyObject) {
+        self.performSegueWithIdentifier("listSegue", sender: self)
+    }
 }
