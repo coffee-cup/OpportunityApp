@@ -1,68 +1,178 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QuK-UE-pbn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="clB-vc-fyl">
+        <!--View Controller-->
+        <scene sceneID="40S-fo-S0g">
             <objects>
-                <viewController id="703-4V-yAM" customClass="RootViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QuK-UE-pbn" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I7W-xW-C47"/>
-                        <viewControllerLayoutGuide type="bottom" id="IfR-02-kHw"/>
+                        <viewControllerLayoutGuide type="top" id="nPh-RQ-1SY"/>
+                        <viewControllerLayoutGuide type="bottom" id="zRE-og-yTC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="502-Ir-ELC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="UvZ-wZ-xMH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-101" y="-243"/>
-        </scene>
-        <!--Data View Controller-->
-        <scene sceneID="snT-py-3hH">
-            <objects>
-                <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="DataViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fXf-Jd-eTc"/>
-                        <viewControllerLayoutGuide type="bottom" id="EPS-s9-h4K"/>
-                    </layoutGuides>
-                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-Le-7mQ">
-                                <rect key="frame" x="20" y="20" width="560" height="16.5"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4Ga-XM-ETj" customClass="DesignableImageView" customModule="Opportunity" customModuleProvider="target">
+                                <rect key="frame" x="98" y="140" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4Ga-XM-ETj" secondAttribute="height" multiplier="1:1" id="RYL-ZM-Y7F"/>
+                                    <constraint firstAttribute="width" constant="180" id="egv-ag-xLJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opportunity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DM-uC-bnU" customClass="DesignableLabel" customModule="Opportunity" customModuleProvider="target">
+                                <rect key="frame" x="78" y="60" width="220" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="scB-aw-VHo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideDown"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-V9-EN7">
-                                <rect key="frame" x="20" y="44" width="560" height="535.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIr-7V-Hea" customClass="DesignableLabel" customModule="Opportunity" customModuleProvider="target">
+                                <rect key="frame" x="125" y="370" width="126" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="TQ4-Ng-DzI"/>
+                                    <constraint firstAttribute="height" constant="50" id="ict-wW-kua"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ict-wW-kua"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start creating complex reminders and never miss out again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scL-82-tED" customClass="DesignableLabel" customModule="Opportunity" customModuleProvider="target">
+                                <rect key="frame" x="53" y="425" width="269" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="AXu-Km-BmN"/>
+                                    <constraint firstAttribute="height" constant="45" id="fOp-34-pPH"/>
+                                    <constraint firstAttribute="height" constant="50" id="hKV-2j-Ayx"/>
+                                    <constraint firstAttribute="width" constant="269" id="kbQ-33-kva"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fOp-34-pPH"/>
+                                        <exclude reference="hKV-2j-Ayx"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THQ-re-EEJ">
+                                <rect key="frame" x="0.0" y="587" width="188" height="80"/>
+                                <color key="backgroundColor" red="0.023529411764705882" green="0.83921568627450982" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="THQ-re-EEJ" secondAttribute="height" multiplier="125:28" id="PGP-eE-RzF"/>
+                                    <constraint firstAttribute="height" constant="80" id="rSa-94-Mb5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PGP-eE-RzF"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-CH-dKe">
+                                <rect key="frame" x="187" y="587" width="188" height="80"/>
+                                <color key="backgroundColor" red="0.45098039215686275" green="0.36078431372549019" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nEZ-CH-dKe" secondAttribute="height" multiplier="125:28" id="9fI-qs-3LX"/>
+                                    <constraint firstAttribute="height" constant="80" id="XrM-p7-l2c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="SIGN UP">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9fI-qs-3LX"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.97826086960000003" green="0.91848131079999995" blue="0.73914263440000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="s1b-V9-EN7" secondAttribute="trailing" constant="20" symbolic="YES" id="333-Jl-G0r"/>
-                            <constraint firstItem="s1b-V9-EN7" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" constant="20" symbolic="YES" id="CIC-qa-9gW"/>
-                            <constraint firstItem="cF2-Le-7mQ" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" constant="20" symbolic="YES" id="PnF-O8-Bso"/>
-                            <constraint firstAttribute="bottom" secondItem="s1b-V9-EN7" secondAttribute="bottom" constant="20" symbolic="YES" id="Xg4-Xc-7kb"/>
-                            <constraint firstAttribute="trailing" secondItem="cF2-Le-7mQ" secondAttribute="trailing" constant="20" symbolic="YES" id="cCk-mG-gz5"/>
-                            <constraint firstItem="s1b-V9-EN7" firstAttribute="top" secondItem="cF2-Le-7mQ" secondAttribute="bottom" constant="8" symbolic="YES" id="kQJ-gh-hu4"/>
-                            <constraint firstItem="cF2-Le-7mQ" firstAttribute="top" secondItem="ZwX-cT-FIQ" secondAttribute="top" constant="20" symbolic="YES" id="zem-Jm-uYh"/>
+                            <constraint firstItem="scL-82-tED" firstAttribute="centerX" secondItem="UvZ-wZ-xMH" secondAttribute="centerX" id="DGq-VP-xOX"/>
+                            <constraint firstItem="5DM-uC-bnU" firstAttribute="centerY" secondItem="UvZ-wZ-xMH" secondAttribute="centerY" id="E3h-bP-0jM"/>
+                            <constraint firstItem="THQ-re-EEJ" firstAttribute="width" secondItem="UvZ-wZ-xMH" secondAttribute="width" multiplier="0.5" id="I5z-8D-QrW"/>
+                            <constraint firstItem="THQ-re-EEJ" firstAttribute="leading" secondItem="UvZ-wZ-xMH" secondAttribute="leading" id="JH3-DJ-DXC"/>
+                            <constraint firstItem="nEZ-CH-dKe" firstAttribute="width" secondItem="THQ-re-EEJ" secondAttribute="width" id="JmL-9j-nUT"/>
+                            <constraint firstItem="5DM-uC-bnU" firstAttribute="top" secondItem="nPh-RQ-1SY" secondAttribute="bottom" constant="40" id="Kug-JV-7at"/>
+                            <constraint firstItem="5DM-uC-bnU" firstAttribute="centerX" secondItem="UvZ-wZ-xMH" secondAttribute="centerX" id="NMb-a3-Kwx"/>
+                            <constraint firstItem="4Ga-XM-ETj" firstAttribute="centerX" secondItem="UvZ-wZ-xMH" secondAttribute="centerX" id="Pvl-1P-3si"/>
+                            <constraint firstItem="AIr-7V-Hea" firstAttribute="top" secondItem="4Ga-XM-ETj" secondAttribute="bottom" constant="50" id="cHS-D4-PaL"/>
+                            <constraint firstItem="scL-82-tED" firstAttribute="top" secondItem="AIr-7V-Hea" secondAttribute="bottom" constant="10" id="dEi-5G-mJ8"/>
+                            <constraint firstItem="4Ga-XM-ETj" firstAttribute="top" secondItem="5DM-uC-bnU" secondAttribute="bottom" constant="30" id="ejn-UJ-oSy"/>
+                            <constraint firstItem="AIr-7V-Hea" firstAttribute="centerX" secondItem="UvZ-wZ-xMH" secondAttribute="centerX" id="m01-Rc-TbM"/>
+                            <constraint firstAttribute="trailing" secondItem="nEZ-CH-dKe" secondAttribute="trailing" id="q6G-zq-j17"/>
+                            <constraint firstItem="zRE-og-yTC" firstAttribute="top" secondItem="nEZ-CH-dKe" secondAttribute="bottom" id="vJv-H2-bkG"/>
+                            <constraint firstItem="zRE-og-yTC" firstAttribute="top" secondItem="THQ-re-EEJ" secondAttribute="bottom" id="yes-fv-EfE"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="E3h-bP-0jM"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="dataLabel" destination="cF2-Le-7mQ" id="3EH-BK-JV6"/>
+                        <segue destination="hPy-5j-6TG" kind="presentation" identifier="listSegue" id="fTa-4K-wZ1"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwB-q4-YSI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="597" y="-243"/>
+            <point key="canvasLocation" x="302.5" y="-16.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="o0h-0K-aXx">
+            <objects>
+                <viewController id="hPy-5j-6TG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t5m-w2-Xod"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xat-8L-jju"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fqz-1G-q4i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jab-45-bCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764.5" y="-16.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="300" height="300"/>
+    </resources>
 </document>
