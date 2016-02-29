@@ -10,32 +10,12 @@ import UIKit
 
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var createOppButton: UIBarButtonItem!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let toView = segue.destinationViewController
-        toView.transitioningDelegate = self.transitioningDelegate
-        
-        print("Yes")
-        if let addView = toView as? CreateOppViewController {
-            print("no")
-            print(sender)
-            if let createButton = sender as? UIBarButtonItem {
-                addView.creating = true
-            }
-        }
-    }
-    
-    @IBAction func createOppButtonDidTouch(sender: AnyObject) {
-        self.performSegueWithIdentifier("addSegue", sender: createOppButton)
     }
     
     // MARK: - Table view data source

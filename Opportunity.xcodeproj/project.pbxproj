@@ -84,8 +84,24 @@
 		9C09360A1C73D32C00E9078C /* Sweetercolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0936061C73D32C00E9078C /* Sweetercolor.swift */; };
 		9C09360C1C73D49F00E9078C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C09360B1C73D49F00E9078C /* Assets.xcassets */; };
 		9C09360D1C73D49F00E9078C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C09360B1C73D49F00E9078C /* Assets.xcassets */; };
-		9C09360F1C73D96900E9078C /* CreateOppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09360E1C73D96900E9078C /* CreateOppViewController.swift */; };
-		9C0936101C73D96900E9078C /* CreateOppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09360E1C73D96900E9078C /* CreateOppViewController.swift */; };
+		9C0936121C73F8BD00E9078C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0936111C73F8BD00E9078C /* SettingsViewController.swift */; };
+		9C0936131C73F8BD00E9078C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0936111C73F8BD00E9078C /* SettingsViewController.swift */; };
+		9C0936151C74005700E9078C /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0936141C74005700E9078C /* SplitViewController.swift */; };
+		9C0936181C74022200E9078C /* OppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0936171C74022200E9078C /* OppsViewController.swift */; };
+		9C0DCAC91C82A0D700FD2FF5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DCAC81C82A0D700FD2FF5 /* Test.swift */; };
+		9C0DCACD1C82A6BE00FD2FF5 /* OppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */; };
+		9C0DCACF1C82ABFD00FD2FF5 /* CreateOppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09360E1C73D96900E9078C /* CreateOppViewController.swift */; };
+		9C214F571C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F501C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m */; };
+		9C214F581C76923200F3C38C /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F521C76923200F3C38C /* TPKeyboardAvoidingScrollView.m */; };
+		9C214F591C76923200F3C38C /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F541C76923200F3C38C /* TPKeyboardAvoidingTableView.m */; };
+		9C214F5A1C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F561C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		9C5C53691C828F1600264C7A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C53671C828F1600264C7A /* Model.xcdatamodeld */; };
+		9C5C53AD1C82926800264C7A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C53AC1C82926800264C7A /* Store.swift */; };
+		9CACEB291C7FCB8000C4B5E7 /* CondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */; };
+		9CACEB2B1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */; };
+		9CAF37551C8295E200AE24F0 /* Opp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF37531C8295E200AE24F0 /* Opp+CoreDataProperties.swift */; };
+		9CAF37561C8295E200AE24F0 /* Opp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF37541C8295E200AE24F0 /* Opp.swift */; };
+		B17EF11E8E3124B455A9B65C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59C88E14EBACAFE80395B892 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +122,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21B2CBA66D33B1D1A454B518 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		59C88E14EBACAFE80395B892 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0935621C730F8D00E9078C /* Opportunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Opportunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C0935651C730F8D00E9078C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C09356E1C730F8D00E9078C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +174,26 @@
 		9C0936061C73D32C00E9078C /* Sweetercolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sweetercolor.swift; sourceTree = "<group>"; };
 		9C09360B1C73D49F00E9078C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C09360E1C73D96900E9078C /* CreateOppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOppViewController.swift; sourceTree = "<group>"; };
+		9C0936111C73F8BD00E9078C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9C0936141C74005700E9078C /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		9C0936171C74022200E9078C /* OppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppsViewController.swift; sourceTree = "<group>"; };
+		9C0DCAC81C82A0D700FD2FF5 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppTableViewCell.swift; sourceTree = "<group>"; };
+		9C214F4F1C76923200F3C38C /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		9C214F501C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		9C214F511C76923200F3C38C /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		9C214F521C76923200F3C38C /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		9C214F531C76923200F3C38C /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		9C214F541C76923200F3C38C /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		9C214F551C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		9C214F561C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		9C5C53681C828F1600264C7A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9C5C53AC1C82926800264C7A /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondTableViewCell.swift; sourceTree = "<group>"; };
+		9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConditionTableViewController.swift; sourceTree = "<group>"; };
+		9CAF37531C8295E200AE24F0 /* Opp+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Opp+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9CAF37541C8295E200AE24F0 /* Opp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opp.swift; sourceTree = "<group>"; };
+		CD24823CC7B2D22D5E7689E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17EF11E8E3124B455A9B65C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +229,8 @@
 				9C09357D1C730F8D00E9078C /* OpportunityTests */,
 				9C0935881C730F8D00E9078C /* OpportunityUITests */,
 				9C0935631C730F8D00E9078C /* Products */,
+				AF1882532474B4F550EDA81E /* Pods */,
+				B7EEF05709711B8AF263EE1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +247,8 @@
 		9C0935641C730F8D00E9078C /* Opportunity */ = {
 			isa = PBXGroup;
 			children = (
+				9CAF37571C82969B00AE24F0 /* Data Objects */,
+				9C214F4E1C76923200F3C38C /* TPKeyboardAvoiding */,
 				9C0936031C73D32C00E9078C /* Sweetercolor */,
 				9C09359B1C73129800E9078C /* Spring */,
 				9C0935971C7311B200E9078C /* Fonts */,
@@ -218,6 +261,15 @@
 				9C0936001C73D28B00E9078C /* Styles.swift */,
 				9C09360B1C73D49F00E9078C /* Assets.xcassets */,
 				9C09360E1C73D96900E9078C /* CreateOppViewController.swift */,
+				9C0936111C73F8BD00E9078C /* SettingsViewController.swift */,
+				9C0936141C74005700E9078C /* SplitViewController.swift */,
+				9C0936171C74022200E9078C /* OppsViewController.swift */,
+				9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */,
+				9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */,
+				9C5C53671C828F1600264C7A /* Model.xcdatamodeld */,
+				9C5C53AC1C82926800264C7A /* Store.swift */,
+				9C0DCAC81C82A0D700FD2FF5 /* Test.swift */,
+				9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */,
 			);
 			path = Opportunity;
 			sourceTree = "<group>";
@@ -295,6 +347,47 @@
 			path = Sweetercolor;
 			sourceTree = "<group>";
 		};
+		9C214F4E1C76923200F3C38C /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				9C214F4F1C76923200F3C38C /* TPKeyboardAvoidingCollectionView.h */,
+				9C214F501C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m */,
+				9C214F511C76923200F3C38C /* TPKeyboardAvoidingScrollView.h */,
+				9C214F521C76923200F3C38C /* TPKeyboardAvoidingScrollView.m */,
+				9C214F531C76923200F3C38C /* TPKeyboardAvoidingTableView.h */,
+				9C214F541C76923200F3C38C /* TPKeyboardAvoidingTableView.m */,
+				9C214F551C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				9C214F561C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		9CAF37571C82969B00AE24F0 /* Data Objects */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF37531C8295E200AE24F0 /* Opp+CoreDataProperties.swift */,
+				9CAF37541C8295E200AE24F0 /* Opp.swift */,
+			);
+			name = "Data Objects";
+			sourceTree = "<group>";
+		};
+		AF1882532474B4F550EDA81E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD24823CC7B2D22D5E7689E8 /* Pods.debug.xcconfig */,
+				21B2CBA66D33B1D1A454B518 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B7EEF05709711B8AF263EE1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59C88E14EBACAFE80395B892 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,9 +395,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C09358E1C730F8D00E9078C /* Build configuration list for PBXNativeTarget "Opportunity" */;
 			buildPhases = (
+				98C24488EFCC6DC7025F6878 /* Check Pods Manifest.lock */,
 				9C09355E1C730F8C00E9078C /* Sources */,
 				9C09355F1C730F8C00E9078C /* Frameworks */,
 				9C0935601C730F8C00E9078C /* Resources */,
+				A7C586F0595F77A17C32B532 /* Embed Pods Frameworks */,
+				A5FED962E71F4AA849871AE1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -430,6 +526,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		98C24488EFCC6DC7025F6878 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5FED962E71F4AA849871AE1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7C586F0595F77A17C32B532 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9C09355E1C730F8C00E9078C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -438,35 +582,50 @@
 				9C0935C01C73129800E9078C /* BlurView.swift in Sources */,
 				9C0935D41C73129800E9078C /* KeyboardLayoutConstraint.swift in Sources */,
 				9C0935EA1C73129800E9078C /* SpringTextView.swift in Sources */,
+				9C0DCACD1C82A6BE00FD2FF5 /* OppTableViewCell.swift in Sources */,
 				9C0935BA1C73129800E9078C /* AsyncButton.swift in Sources */,
 				9C0935CC1C73129800E9078C /* DesignableTextView.swift in Sources */,
 				9C0935F21C73129800E9078C /* UnwindSegue.swift in Sources */,
 				9C0936011C73D28B00E9078C /* Styles.swift in Sources */,
 				9C0935E61C73129800E9078C /* SpringLabel.swift in Sources */,
-				9C09360F1C73D96900E9078C /* CreateOppViewController.swift in Sources */,
+				9CAF37551C8295E200AE24F0 /* Opp+CoreDataProperties.swift in Sources */,
+				9CAF37561C8295E200AE24F0 /* Opp.swift in Sources */,
+				9C214F571C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				9C5C53691C828F1600264C7A /* Model.xcdatamodeld in Sources */,
 				9C0935BE1C73129800E9078C /* AutoTextView.swift in Sources */,
 				9C0935E01C73129800E9078C /* SpringAnimation.swift in Sources */,
 				9C0935D01C73129800E9078C /* ImageLoader.swift in Sources */,
 				9C0936091C73D32C00E9078C /* Sweetercolor.swift in Sources */,
 				9C0935E81C73129800E9078C /* SpringTextField.swift in Sources */,
+				9C214F581C76923200F3C38C /* TPKeyboardAvoidingScrollView.m in Sources */,
 				9C0935C41C73129800E9078C /* DesignableImageView.swift in Sources */,
+				9C0936151C74005700E9078C /* SplitViewController.swift in Sources */,
+				9C214F591C76923200F3C38C /* TPKeyboardAvoidingTableView.m in Sources */,
+				9C0936181C74022200E9078C /* OppsViewController.swift in Sources */,
 				9C0935DC1C73129800E9078C /* SoundPlayer.swift in Sources */,
 				9C0935F51C7317BC00E9078C /* WelcomeViewController.swift in Sources */,
 				9C0935DA1C73129800E9078C /* Misc.swift in Sources */,
+				9C0DCACF1C82ABFD00FD2FF5 /* CreateOppViewController.swift in Sources */,
 				9C0935CE1C73129800E9078C /* DesignableView.swift in Sources */,
 				9C0935FE1C731B6F00E9078C /* ListViewController.swift in Sources */,
 				9C0935EC1C73129800E9078C /* SpringView.swift in Sources */,
 				9C0935661C730F8D00E9078C /* AppDelegate.swift in Sources */,
 				9C0935BC1C73129800E9078C /* AsyncImageView.swift in Sources */,
+				9C0DCAC91C82A0D700FD2FF5 /* Test.swift in Sources */,
 				9C0935C21C73129800E9078C /* DesignableButton.swift in Sources */,
+				9C214F5A1C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				9C0935F01C73129800E9078C /* TransitionZoom.swift in Sources */,
 				9C0935E41C73129800E9078C /* SpringImageView.swift in Sources */,
 				9C0935E21C73129800E9078C /* SpringButton.swift in Sources */,
+				9CACEB2B1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift in Sources */,
 				9C0935C81C73129800E9078C /* DesignableTabBarController.swift in Sources */,
 				9C0935C61C73129800E9078C /* DesignableLabel.swift in Sources */,
+				9C0936121C73F8BD00E9078C /* SettingsViewController.swift in Sources */,
 				9C0935EE1C73129800E9078C /* TransitionManager.swift in Sources */,
+				9C5C53AD1C82926800264C7A /* Store.swift in Sources */,
 				9C0935CA1C73129800E9078C /* DesignableTextField.swift in Sources */,
 				9C0935D61C73129800E9078C /* LoadingView.swift in Sources */,
+				9CACEB291C7FCB8000C4B5E7 /* CondTableViewCell.swift in Sources */,
 				9C0935DE1C73129800E9078C /* Spring.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,7 +650,6 @@
 				9C0935E91C73129800E9078C /* SpringTextField.swift in Sources */,
 				9C0936021C73D28B00E9078C /* Styles.swift in Sources */,
 				9C09358A1C730F8D00E9078C /* OpportunityUITests.swift in Sources */,
-				9C0936101C73D96900E9078C /* CreateOppViewController.swift in Sources */,
 				9C0935C11C73129800E9078C /* BlurView.swift in Sources */,
 				9C0935E71C73129800E9078C /* SpringLabel.swift in Sources */,
 				9C0935BF1C73129800E9078C /* AutoTextView.swift in Sources */,
@@ -512,6 +670,7 @@
 				9C0935EB1C73129800E9078C /* SpringTextView.swift in Sources */,
 				9C0935D51C73129800E9078C /* KeyboardLayoutConstraint.swift in Sources */,
 				9C0935C51C73129800E9078C /* DesignableImageView.swift in Sources */,
+				9C0936131C73F8BD00E9078C /* SettingsViewController.swift in Sources */,
 				9C0935DD1C73129800E9078C /* SoundPlayer.swift in Sources */,
 				9C0935E11C73129800E9078C /* SpringAnimation.swift in Sources */,
 				9C0935F31C73129800E9078C /* UnwindSegue.swift in Sources */,
@@ -637,6 +796,7 @@
 		};
 		9C09358F1C730F8D00E9078C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD24823CC7B2D22D5E7689E8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Opportunity/Info.plist;
@@ -648,6 +808,7 @@
 		};
 		9C0935901C730F8D00E9078C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21B2CBA66D33B1D1A454B518 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Opportunity/Info.plist;
@@ -724,6 +885,7 @@
 				9C0935901C730F8D00E9078C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C0935911C730F8D00E9078C /* Build configuration list for PBXNativeTarget "OpportunityTests" */ = {
 			isa = XCConfigurationList;
@@ -732,6 +894,7 @@
 				9C0935931C730F8D00E9078C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C0935941C730F8D00E9078C /* Build configuration list for PBXNativeTarget "OpportunityUITests" */ = {
 			isa = XCConfigurationList;
@@ -740,8 +903,22 @@
 				9C0935961C730F8D00E9078C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9C5C53671C828F1600264C7A /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C5C53681C828F1600264C7A /* Model.xcdatamodel */,
+			);
+			currentVersion = 9C5C53681C828F1600264C7A /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9C09355A1C730F8C00E9078C /* Project object */;
 }
