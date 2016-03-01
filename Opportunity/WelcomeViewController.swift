@@ -8,6 +8,8 @@
 
 import UIKit
 
+let WELCOMED = "welcomed"
+
 class WelcomeViewController: UIViewController {
 
     let transitionManager = TransitionManager()
@@ -23,6 +25,9 @@ class WelcomeViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let toView = segue.destinationViewController
         toView.transitioningDelegate = transitionManager
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setBool(true, forKey: WELCOMED)
     }
     
     @IBAction func signInButtonDidTouch(sender: AnyObject) {

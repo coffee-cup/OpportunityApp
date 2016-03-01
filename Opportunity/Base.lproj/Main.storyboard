@@ -187,7 +187,7 @@
         <!--Your Opps-->
         <scene sceneID="FX1-hh-q9f">
             <objects>
-                <viewController id="Sm1-jY-SEy" customClass="SplitViewController" customModule="Opportunity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplitView" id="Sm1-jY-SEy" customClass="SplitViewController" customModule="Opportunity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XOm-fS-4HB"/>
                         <viewControllerLayoutGuide type="bottom" id="RXh-vU-Toe"/>
@@ -338,7 +338,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Visit the bug zoo" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="i62-oL-hGi" customClass="DesignableTextField" customModule="Opportunity" customModuleProvider="target">
                                         <rect key="frame" x="30" y="45" width="245" height="47"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jg3-GS-L5P" customClass="DesignableButton" customModule="Opportunity" customModuleProvider="target">
                                         <rect key="frame" x="295" y="25" width="50" height="50"/>
@@ -722,7 +722,7 @@
         <!--Set Location-->
         <scene sceneID="DHI-px-rZQ">
             <objects>
-                <viewController title="Set Location" id="ZVi-OQ-DMJ" sceneMemberID="viewController">
+                <viewController title="Set Location" id="ZVi-OQ-DMJ" customClass="LocationViewController" customModule="Opportunity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mmb-uz-5pJ"/>
                         <viewControllerLayoutGuide type="bottom" id="8dJ-Tz-CPc"/>
@@ -731,19 +731,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Address" translatesAutoresizingMaskIntoConstraints="NO" id="ICy-Yu-rvJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="ICy-Yu-rvJ">
+                                <rect key="frame" x="30" y="64" width="315" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bVO-3N-Tll">
+                                <rect key="frame" x="0.0" y="177" width="375" height="490"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEE-Su-EUK">
+                                <rect key="frame" x="30" y="118" width="54" height="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="0.49627850509999999" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUP-yI-sgU">
+                                <rect key="frame" x="30" y="145" width="315" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8dJ-Tz-CPc" firstAttribute="top" secondItem="bVO-3N-Tll" secondAttribute="bottom" id="0eJ-Mc-zca"/>
+                            <constraint firstItem="bVO-3N-Tll" firstAttribute="top" secondItem="sUP-yI-sgU" secondAttribute="bottom" constant="10" id="2HM-Rg-7F7"/>
+                            <constraint firstItem="TEE-Su-EUK" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" constant="30" id="DlV-Xz-Ayd"/>
                             <constraint firstItem="ICy-Yu-rvJ" firstAttribute="top" secondItem="mmb-uz-5pJ" secondAttribute="bottom" id="FSE-Lc-Uul"/>
-                            <constraint firstAttribute="trailing" secondItem="ICy-Yu-rvJ" secondAttribute="trailing" id="kr5-YO-P9Z"/>
-                            <constraint firstItem="ICy-Yu-rvJ" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" id="z4p-kX-fvk"/>
+                            <constraint firstAttribute="trailing" secondItem="sUP-yI-sgU" secondAttribute="trailing" constant="30" id="SVT-sn-sEG"/>
+                            <constraint firstItem="bVO-3N-Tll" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" id="VPu-nH-jPm"/>
+                            <constraint firstAttribute="trailing" secondItem="bVO-3N-Tll" secondAttribute="trailing" id="asd-an-Gqt"/>
+                            <constraint firstItem="TEE-Su-EUK" firstAttribute="top" secondItem="ICy-Yu-rvJ" secondAttribute="bottom" constant="10" id="dk1-Fb-CWY"/>
+                            <constraint firstItem="sUP-yI-sgU" firstAttribute="top" secondItem="TEE-Su-EUK" secondAttribute="bottom" constant="10" id="fTJ-F1-KoI"/>
+                            <constraint firstAttribute="trailing" secondItem="ICy-Yu-rvJ" secondAttribute="trailing" constant="30" id="kr5-YO-P9Z"/>
+                            <constraint firstItem="sUP-yI-sgU" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" constant="30" id="xhh-gh-e7k"/>
+                            <constraint firstItem="ICy-Yu-rvJ" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" constant="30" id="z4p-kX-fvk"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="bVO-3N-Tll" id="Its-g7-LeJ"/>
+                        <outlet property="searchBar" destination="ICy-Yu-rvJ" id="eaF-4G-P5S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cce-6M-WoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -752,7 +780,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yuO-Tc-xxz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="htq-3j-5Ft" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InitView" automaticallyAdjustsScrollViewInsets="NO" id="htq-3j-5Ft" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ehn-Un-1x8">

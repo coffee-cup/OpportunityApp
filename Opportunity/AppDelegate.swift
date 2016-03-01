@@ -17,6 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        application.setMinimumBackgroundFetchInterval(60 * 60) // 60 seconds * 60 minutes = 1 hour
+//        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+
+        // ask user for notification permissions
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound], categories: nil))
+
+        // change what initial view controller is
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let welcomed = userDefaults.boolForKey(WELCOMED)
+        if welcomed {
+            // load split view from navigation controller if already welcomed
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("InitView")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 
@@ -60,6 +77,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let modelURL = NSBundle.mainBundle().URLForResource("Model", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
+    
+    // Background
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        let background = Background()
+        let oneTriggered: Bool = background.backgroundFetch()
+        if oneTriggered {
+            completionHandler(UIBackgroundFetchResult.NewData)
+        } else {
+            completionHandler(UIBackgroundFetchResult.NoData)
+        }
+
+//        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+//        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+//        dispatch_async(backgroundQueue, {
+//        
+//            print("running on background")
+//            
+//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                print("This is run on the main queue, after the previous code in outer block")
+//            })
+//        })
+    }
     
 }
 

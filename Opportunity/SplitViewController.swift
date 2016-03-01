@@ -18,6 +18,8 @@ class SplitViewController: UIViewController, OppListDelegate {
     
     var store: Store!
     
+    let ANIMATION_DURATION = 0.175
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +45,7 @@ class SplitViewController: UIViewController, OppListDelegate {
         settingsContainerView.hidden = false
         oppListContainerView.hidden = true
         
-        UIView.animateWithDuration(0.250, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+        UIView.animateWithDuration(ANIMATION_DURATION, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             self.activeTabView.transform = CGAffineTransformMakeTranslation(self.activeTabView.bounds.width, 0)
             }, completion: {finished in
         })
@@ -53,7 +55,7 @@ class SplitViewController: UIViewController, OppListDelegate {
         oppListContainerView.hidden = false
         settingsContainerView.hidden = true
         
-        UIView.animateWithDuration(0.250, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+        UIView.animateWithDuration(ANIMATION_DURATION, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             self.activeTabView.transform = CGAffineTransformMakeTranslation(0, 0)
             }, completion: {finished in
         })

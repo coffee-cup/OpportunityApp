@@ -104,6 +104,10 @@
 		9C8E99481C8425D000AF522F /* ConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99471C8425D000AF522F /* ConditionViewController.swift */; };
 		9C8E994B1C84FA6D00AF522F /* Opp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99491C84FA6D00AF522F /* Opp+CoreDataProperties.swift */; };
 		9C8E994C1C84FA6D00AF522F /* Opp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E994A1C84FA6D00AF522F /* Opp.swift */; };
+		9C8E99501C852FE500AF522F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E994F1C852FE500AF522F /* LocationViewController.swift */; };
+		9C8E99521C85326A00AF522F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8E99511C85326A00AF522F /* MapKit.framework */; };
+		9C8E99541C857DEE00AF522F /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99531C857DEE00AF522F /* Background.swift */; };
+		9C8E99561C85884C00AF522F /* ConditionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99551C85884B00AF522F /* ConditionParser.swift */; };
 		9CACEB291C7FCB8000C4B5E7 /* CondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */; };
 		9CACEB2B1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */; };
 		B17EF11E8E3124B455A9B65C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59C88E14EBACAFE80395B892 /* Pods.framework */; };
@@ -201,6 +205,10 @@
 		9C8E99471C8425D000AF522F /* ConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionViewController.swift; sourceTree = "<group>"; };
 		9C8E99491C84FA6D00AF522F /* Opp+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Opp+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9C8E994A1C84FA6D00AF522F /* Opp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opp.swift; sourceTree = "<group>"; };
+		9C8E994F1C852FE500AF522F /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		9C8E99511C85326A00AF522F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9C8E99531C857DEE00AF522F /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		9C8E99551C85884B00AF522F /* ConditionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionParser.swift; sourceTree = "<group>"; };
 		9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondTableViewCell.swift; sourceTree = "<group>"; };
 		9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConditionTableViewController.swift; sourceTree = "<group>"; };
 		CD24823CC7B2D22D5E7689E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8E99521C85326A00AF522F /* MapKit.framework in Frameworks */,
 				B17EF11E8E3124B455A9B65C /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,32 +266,33 @@
 		9C0935641C730F8D00E9078C /* Opportunity */ = {
 			isa = PBXGroup;
 			children = (
-				9CAF37571C82969B00AE24F0 /* Data Objects */,
-				9C214F4E1C76923200F3C38C /* TPKeyboardAvoiding */,
-				9C0936031C73D32C00E9078C /* Sweetercolor */,
-				9C09359B1C73129800E9078C /* Spring */,
-				9C0935971C7311B200E9078C /* Fonts */,
-				9C0935651C730F8D00E9078C /* AppDelegate.swift */,
-				9C09356D1C730F8D00E9078C /* Main.storyboard */,
-				9C0935721C730F8D00E9078C /* LaunchScreen.storyboard */,
 				9C0935751C730F8D00E9078C /* Info.plist */,
-				9C0935F41C7317BC00E9078C /* WelcomeViewController.swift */,
-				9C0935FD1C731B6F00E9078C /* ListViewController.swift */,
-				9C0936001C73D28B00E9078C /* Styles.swift */,
-				9C09360B1C73D49F00E9078C /* Assets.xcassets */,
-				9C09360E1C73D96900E9078C /* CreateOppViewController.swift */,
-				9C0936111C73F8BD00E9078C /* SettingsViewController.swift */,
-				9C0936141C74005700E9078C /* SplitViewController.swift */,
-				9C0936171C74022200E9078C /* OppsViewController.swift */,
-				9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */,
 				9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */,
-				9C5C53671C828F1600264C7A /* Model.xcdatamodeld */,
-				9C5C53AC1C82926800264C7A /* Store.swift */,
-				9C0DCAC81C82A0D700FD2FF5 /* Test.swift */,
+				9C0935651C730F8D00E9078C /* AppDelegate.swift */,
+				9C8E99531C857DEE00AF522F /* Background.swift */,
+				9C8E99551C85884B00AF522F /* ConditionParser.swift */,
+				9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */,
+				9C09360E1C73D96900E9078C /* CreateOppViewController.swift */,
+				9C0935FD1C731B6F00E9078C /* ListViewController.swift */,
+				9C0936171C74022200E9078C /* OppsViewController.swift */,
 				9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */,
 				9C8E99431C84009500AF522F /* RangeSlider.swift */,
-				9C8E99451C84056500AF522F /* TimeRangeViewController.swift */,
-				9C8E99471C8425D000AF522F /* ConditionViewController.swift */,
+				9C0936111C73F8BD00E9078C /* SettingsViewController.swift */,
+				9C0936141C74005700E9078C /* SplitViewController.swift */,
+				9C5C53AC1C82926800264C7A /* Store.swift */,
+				9C0936001C73D28B00E9078C /* Styles.swift */,
+				9C0DCAC81C82A0D700FD2FF5 /* Test.swift */,
+				9C0935F41C7317BC00E9078C /* WelcomeViewController.swift */,
+				9C09360B1C73D49F00E9078C /* Assets.xcassets */,
+				9C8E99571C85984D00AF522F /* ConditionViews */,
+				9CAF37571C82969B00AE24F0 /* Data Objects */,
+				9C0935971C7311B200E9078C /* Fonts */,
+				9C0935721C730F8D00E9078C /* LaunchScreen.storyboard */,
+				9C09356D1C730F8D00E9078C /* Main.storyboard */,
+				9C5C53671C828F1600264C7A /* Model.xcdatamodeld */,
+				9C09359B1C73129800E9078C /* Spring */,
+				9C0936031C73D32C00E9078C /* Sweetercolor */,
+				9C214F4E1C76923200F3C38C /* TPKeyboardAvoiding */,
 			);
 			path = Opportunity;
 			sourceTree = "<group>";
@@ -375,6 +385,16 @@
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		9C8E99571C85984D00AF522F /* ConditionViews */ = {
+			isa = PBXGroup;
+			children = (
+				9C8E99451C84056500AF522F /* TimeRangeViewController.swift */,
+				9C8E99471C8425D000AF522F /* ConditionViewController.swift */,
+				9C8E994F1C852FE500AF522F /* LocationViewController.swift */,
+			);
+			name = ConditionViews;
+			sourceTree = "<group>";
+		};
 		9CAF37571C82969B00AE24F0 /* Data Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +418,7 @@
 		B7EEF05709711B8AF263EE1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C8E99511C85326A00AF522F /* MapKit.framework */,
 				59C88E14EBACAFE80395B892 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -476,6 +497,9 @@
 						CreatedOnToolsVersion = 7.2.1;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
@@ -632,8 +656,10 @@
 				9C0935CE1C73129800E9078C /* DesignableView.swift in Sources */,
 				9C0935FE1C731B6F00E9078C /* ListViewController.swift in Sources */,
 				9C0935EC1C73129800E9078C /* SpringView.swift in Sources */,
+				9C8E99501C852FE500AF522F /* LocationViewController.swift in Sources */,
 				9C0935661C730F8D00E9078C /* AppDelegate.swift in Sources */,
 				9C0935BC1C73129800E9078C /* AsyncImageView.swift in Sources */,
+				9C8E99561C85884C00AF522F /* ConditionParser.swift in Sources */,
 				9C0DCAC91C82A0D700FD2FF5 /* Test.swift in Sources */,
 				9C0935C21C73129800E9078C /* DesignableButton.swift in Sources */,
 				9C214F5A1C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
@@ -642,6 +668,7 @@
 				9C0935E21C73129800E9078C /* SpringButton.swift in Sources */,
 				9CACEB2B1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift in Sources */,
 				9C0935C81C73129800E9078C /* DesignableTabBarController.swift in Sources */,
+				9C8E99541C857DEE00AF522F /* Background.swift in Sources */,
 				9C0935C61C73129800E9078C /* DesignableLabel.swift in Sources */,
 				9C0936121C73F8BD00E9078C /* SettingsViewController.swift in Sources */,
 				9C0935EE1C73129800E9078C /* TransitionManager.swift in Sources */,

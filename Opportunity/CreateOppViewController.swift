@@ -100,14 +100,12 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func createCondition(type: String, value: String, message: String) {
-        print("Create Condition [\(type), \(value) : \(message)")
         store.createCondition(opp!, type: type, value: value, message: message)
         reloadConditions()
         popBack()
     }
     
     func updateCondition(condition: Condition, type: String, value: String, message: String) {
-        print("Updating condition")
         store.updateCondition(condition, ownerOpp: opp!, type: type, value: value, message: message)
         reloadConditions()
         popBack()

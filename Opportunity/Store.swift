@@ -50,8 +50,15 @@ class Store {
         return opp
     }
     
+    // toggle disable property of opp
     func toggleDisabled(opp: Opp) {
         opp.disabled = opp.disabled! == 1 ? 0 : 1
+        save()
+    }
+    
+    // set last triggered time of opp to now
+    func setLastTriggered(opp: Opp) {
+        opp.lastTriggered = NSDate()
         save()
     }
     

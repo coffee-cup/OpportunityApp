@@ -23,7 +23,7 @@ class TimeRangeViewController: ConditionViewController {
         navigationItem.rightBarButtonItem = checkButton
         
         if condition != nil {
-            let values = parseValue(condition!.value!)
+            let values = ConditionParser.parseTimeRange(condition!.value!)
             timeSlider.lowerValue = Double(values.0)
             timeSlider.upperValue = Double(values.1)
         }
@@ -33,14 +33,7 @@ class TimeRangeViewController: ConditionViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
-    func parseValue(valueString: String) -> (Int, Int) {
-        let array = valueString.componentsSeparatedByString("|")
-        let lowValue = Int(array[0])!
-        let upValue = Int(array[1])!+3
-        return (lowValue, upValue)
-    }
-    
+        
     func getMessage() -> String {
         let early = numToTimeString(timeSlider.lowerValue)
         let late = numToTimeString(timeSlider.upperValue-3)

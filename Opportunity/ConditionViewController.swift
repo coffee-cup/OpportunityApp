@@ -18,11 +18,9 @@ class ConditionViewController: UIViewController {
         if condition == nil {
             // create new condition
             delegate?.createCondition(type, value: value, message: message)
-            print("Creating new condition")
         } else {
             // update condition
             delegate?.updateCondition(condition!, type: type, value: value, message: message)
-            print("updating condition")
         }
     }
     
