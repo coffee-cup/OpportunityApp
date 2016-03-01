@@ -97,10 +97,15 @@
 		9C214F5A1C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F561C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		9C5C53691C828F1600264C7A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C53671C828F1600264C7A /* Model.xcdatamodeld */; };
 		9C5C53AD1C82926800264C7A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C53AC1C82926800264C7A /* Store.swift */; };
+		9C8E99411C83F64000AF522F /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E993F1C83F64000AF522F /* Condition+CoreDataProperties.swift */; };
+		9C8E99421C83F64000AF522F /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99401C83F64000AF522F /* Condition.swift */; };
+		9C8E99441C84009500AF522F /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99431C84009500AF522F /* RangeSlider.swift */; };
+		9C8E99461C84056500AF522F /* TimeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99451C84056500AF522F /* TimeRangeViewController.swift */; };
+		9C8E99481C8425D000AF522F /* ConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99471C8425D000AF522F /* ConditionViewController.swift */; };
+		9C8E994B1C84FA6D00AF522F /* Opp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99491C84FA6D00AF522F /* Opp+CoreDataProperties.swift */; };
+		9C8E994C1C84FA6D00AF522F /* Opp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E994A1C84FA6D00AF522F /* Opp.swift */; };
 		9CACEB291C7FCB8000C4B5E7 /* CondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */; };
 		9CACEB2B1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */; };
-		9CAF37551C8295E200AE24F0 /* Opp+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF37531C8295E200AE24F0 /* Opp+CoreDataProperties.swift */; };
-		9CAF37561C8295E200AE24F0 /* Opp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF37541C8295E200AE24F0 /* Opp.swift */; };
 		B17EF11E8E3124B455A9B65C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59C88E14EBACAFE80395B892 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -189,10 +194,15 @@
 		9C214F561C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		9C5C53681C828F1600264C7A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9C5C53AC1C82926800264C7A /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9C8E993F1C83F64000AF522F /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9C8E99401C83F64000AF522F /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		9C8E99431C84009500AF522F /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		9C8E99451C84056500AF522F /* TimeRangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeViewController.swift; sourceTree = "<group>"; };
+		9C8E99471C8425D000AF522F /* ConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionViewController.swift; sourceTree = "<group>"; };
+		9C8E99491C84FA6D00AF522F /* Opp+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Opp+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9C8E994A1C84FA6D00AF522F /* Opp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opp.swift; sourceTree = "<group>"; };
 		9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondTableViewCell.swift; sourceTree = "<group>"; };
 		9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConditionTableViewController.swift; sourceTree = "<group>"; };
-		9CAF37531C8295E200AE24F0 /* Opp+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Opp+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9CAF37541C8295E200AE24F0 /* Opp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opp.swift; sourceTree = "<group>"; };
 		CD24823CC7B2D22D5E7689E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,6 +280,9 @@
 				9C5C53AC1C82926800264C7A /* Store.swift */,
 				9C0DCAC81C82A0D700FD2FF5 /* Test.swift */,
 				9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */,
+				9C8E99431C84009500AF522F /* RangeSlider.swift */,
+				9C8E99451C84056500AF522F /* TimeRangeViewController.swift */,
+				9C8E99471C8425D000AF522F /* ConditionViewController.swift */,
 			);
 			path = Opportunity;
 			sourceTree = "<group>";
@@ -365,8 +378,10 @@
 		9CAF37571C82969B00AE24F0 /* Data Objects */ = {
 			isa = PBXGroup;
 			children = (
-				9CAF37531C8295E200AE24F0 /* Opp+CoreDataProperties.swift */,
-				9CAF37541C8295E200AE24F0 /* Opp.swift */,
+				9C8E993F1C83F64000AF522F /* Condition+CoreDataProperties.swift */,
+				9C8E99401C83F64000AF522F /* Condition.swift */,
+				9C8E99491C84FA6D00AF522F /* Opp+CoreDataProperties.swift */,
+				9C8E994A1C84FA6D00AF522F /* Opp.swift */,
 			);
 			name = "Data Objects";
 			sourceTree = "<group>";
@@ -459,6 +474,11 @@
 				TargetAttributes = {
 					9C0935611C730F8C00E9078C = {
 						CreatedOnToolsVersion = 7.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					9C0935791C730F8D00E9078C = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -580,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0935C01C73129800E9078C /* BlurView.swift in Sources */,
+				9C8E994C1C84FA6D00AF522F /* Opp.swift in Sources */,
 				9C0935D41C73129800E9078C /* KeyboardLayoutConstraint.swift in Sources */,
 				9C0935EA1C73129800E9078C /* SpringTextView.swift in Sources */,
 				9C0DCACD1C82A6BE00FD2FF5 /* OppTableViewCell.swift in Sources */,
@@ -588,18 +609,20 @@
 				9C0935F21C73129800E9078C /* UnwindSegue.swift in Sources */,
 				9C0936011C73D28B00E9078C /* Styles.swift in Sources */,
 				9C0935E61C73129800E9078C /* SpringLabel.swift in Sources */,
-				9CAF37551C8295E200AE24F0 /* Opp+CoreDataProperties.swift in Sources */,
-				9CAF37561C8295E200AE24F0 /* Opp.swift in Sources */,
+				9C8E994B1C84FA6D00AF522F /* Opp+CoreDataProperties.swift in Sources */,
 				9C214F571C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				9C5C53691C828F1600264C7A /* Model.xcdatamodeld in Sources */,
 				9C0935BE1C73129800E9078C /* AutoTextView.swift in Sources */,
 				9C0935E01C73129800E9078C /* SpringAnimation.swift in Sources */,
+				9C8E99461C84056500AF522F /* TimeRangeViewController.swift in Sources */,
 				9C0935D01C73129800E9078C /* ImageLoader.swift in Sources */,
 				9C0936091C73D32C00E9078C /* Sweetercolor.swift in Sources */,
 				9C0935E81C73129800E9078C /* SpringTextField.swift in Sources */,
 				9C214F581C76923200F3C38C /* TPKeyboardAvoidingScrollView.m in Sources */,
+				9C8E99421C83F64000AF522F /* Condition.swift in Sources */,
 				9C0935C41C73129800E9078C /* DesignableImageView.swift in Sources */,
 				9C0936151C74005700E9078C /* SplitViewController.swift in Sources */,
+				9C8E99441C84009500AF522F /* RangeSlider.swift in Sources */,
 				9C214F591C76923200F3C38C /* TPKeyboardAvoidingTableView.m in Sources */,
 				9C0936181C74022200E9078C /* OppsViewController.swift in Sources */,
 				9C0935DC1C73129800E9078C /* SoundPlayer.swift in Sources */,
@@ -626,6 +649,8 @@
 				9C0935CA1C73129800E9078C /* DesignableTextField.swift in Sources */,
 				9C0935D61C73129800E9078C /* LoadingView.swift in Sources */,
 				9CACEB291C7FCB8000C4B5E7 /* CondTableViewCell.swift in Sources */,
+				9C8E99411C83F64000AF522F /* Condition+CoreDataProperties.swift in Sources */,
+				9C8E99481C8425D000AF522F /* ConditionViewController.swift in Sources */,
 				9C0935DE1C73129800E9078C /* Spring.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

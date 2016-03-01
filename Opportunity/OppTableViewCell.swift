@@ -21,7 +21,7 @@ class OppTableViewCell: UITableViewCell {
                 nameLabel.text = newOpp.name != nil ? newOpp.name! : ""
                 colourView.backgroundColor = UIColor(hexString: newOpp.colour!)
                 lastTriggeredLabel.text = ""
-                self.backgroundColor = newOpp.disabled ? UIColor.lightGrayColor() : UIColor.whiteColor()
+                self.backgroundColor = newOpp.disabled == 1 ? UIColor.lightGrayColor() : UIColor.whiteColor()
             }
         }
     }

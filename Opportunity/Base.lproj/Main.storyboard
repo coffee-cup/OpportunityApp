@@ -370,7 +370,7 @@
                                     <constraint firstItem="i62-oL-hGi" firstAttribute="leading" secondItem="sUb-7P-pwV" secondAttribute="leading" constant="30" id="yeq-JR-oOI"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigger Opp if..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKo-SK-Tgu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trigger Opp if..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKo-SK-Tgu" customClass="DesignableLabel" customModule="Opportunity" customModuleProvider="target">
                                 <rect key="frame" x="30" y="184" width="115" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <nil key="highlightedColor"/>
@@ -514,6 +514,9 @@
                         <outlet property="closeButton" destination="sDZ-Y4-Euh" id="BB4-K1-NZl"/>
                         <outlet property="colourButton" destination="Jg3-GS-L5P" id="okG-RP-Djl"/>
                         <outlet property="nameTextField" destination="i62-oL-hGi" id="FoT-oc-taJ"/>
+                        <outlet property="tableView" destination="5At-PY-V8S" id="cY3-pl-bjz"/>
+                        <outlet property="triggerIfLabel" destination="aKo-SK-Tgu" id="jR8-Ro-YYl"/>
+                        <segue destination="RN6-Fj-oQM" kind="show" identifier="TimeRangeSegue" id="PdT-d9-iAS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHB-Q4-hSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -540,7 +543,7 @@
                                             <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -606,7 +609,7 @@
         <!--Time Range-->
         <scene sceneID="8aL-xv-XWy">
             <objects>
-                <viewController title="Time Range" id="RN6-Fj-oQM" sceneMemberID="viewController">
+                <viewController title="Time Range" id="RN6-Fj-oQM" customClass="TimeRangeViewController" customModule="Opportunity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hnc-hz-EcQ"/>
                         <viewControllerLayoutGuide type="bottom" id="nEK-Sk-iIN"/>
@@ -614,9 +617,84 @@
                     <view key="view" contentMode="scaleToFill" id="Qw1-6V-Fif">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT TIME RANGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-9t-gHP">
+                                <rect key="frame" x="30" y="89" width="118" height="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="0.49627850509999999" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8f-Vt-5Qq" customClass="RangeSlider" customModule="Opportunity" customModuleProvider="target">
+                                <rect key="frame" x="30" y="148" width="315" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Lr0-83-XDm"/>
+                                    <constraint firstAttribute="width" constant="240" id="XFp-bM-1QK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="YHY-lb-QKC"/>
+                                    <constraint firstAttribute="height" constant="30" id="w7G-I8-mMT"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackTintColor">
+                                        <color key="value" red="0.88666583110516939" green="0.88666583110516939" blue="0.88666583110516939" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackHighlightTintColor">
+                                        <color key="value" red="0.023529411764705882" green="0.83921568627450982" blue="0.62745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbTintColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="curvaceousness">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Lr0-83-XDm"/>
+                                        <exclude reference="XFp-bM-1QK"/>
+                                        <exclude reference="YHY-lb-QKC"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="timeSliderValueChanged:" destination="RN6-Fj-oQM" eventType="valueChanged" id="kHA-2s-ELG"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Between 7am and 8pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sa-ew-wV1">
+                                <rect key="frame" x="30" y="116" width="315" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8sa-ew-wV1" firstAttribute="top" secondItem="L0l-9t-gHP" secondAttribute="bottom" constant="10" id="JCf-fV-YTH"/>
+                            <constraint firstAttribute="trailing" secondItem="8sa-ew-wV1" secondAttribute="trailing" constant="30" id="W9e-Oe-i5V"/>
+                            <constraint firstAttribute="trailing" secondItem="d8f-Vt-5Qq" secondAttribute="trailing" constant="30" id="i5O-L9-L4t"/>
+                            <constraint firstItem="8sa-ew-wV1" firstAttribute="leading" secondItem="Qw1-6V-Fif" secondAttribute="leading" constant="30" id="iBr-dY-oKC"/>
+                            <constraint firstItem="L0l-9t-gHP" firstAttribute="leading" secondItem="Qw1-6V-Fif" secondAttribute="leading" constant="30" id="okk-mq-2WX"/>
+                            <constraint firstItem="L0l-9t-gHP" firstAttribute="top" secondItem="hnc-hz-EcQ" secondAttribute="bottom" constant="25" id="r3U-ww-oeX"/>
+                            <constraint firstItem="d8f-Vt-5Qq" firstAttribute="top" secondItem="8sa-ew-wV1" secondAttribute="bottom" constant="10" id="s4r-gD-YQX"/>
+                            <constraint firstItem="d8f-Vt-5Qq" firstAttribute="leading" secondItem="Qw1-6V-Fif" secondAttribute="leading" constant="30" id="uBT-Bu-SRU"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="betweenLabel" destination="8sa-ew-wV1" id="dac-BD-eGm"/>
+                        <outlet property="timeSlider" destination="d8f-Vt-5Qq" id="uzH-gR-Z8W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdt-sg-Kcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -862,4 +940,7 @@
         <image name="pin_yellow" width="21" height="36"/>
         <image name="rain_grey" width="33" height="36"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PdT-d9-iAS"/>
+    </inferredMetricsTieBreakers>
 </document>

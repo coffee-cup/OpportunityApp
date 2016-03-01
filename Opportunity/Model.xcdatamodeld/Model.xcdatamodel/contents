@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Condition" representedClassName=".Condition" syncable="YES">
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="newlyCreated" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ownerOpp" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Opp" inverseName="conditions" inverseEntity="Opp" syncable="YES"/>
+    </entity>
     <entity name="Opp" representedClassName=".Opp" syncable="YES">
         <attribute name="colour" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="disabled" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastTriggered" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="conditions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Condition" inverseName="ownerOpp" inverseEntity="Condition" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Opp" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Opp" positionX="117" positionY="-21" width="128" height="133"/>
+        <element name="Condition" positionX="-63" positionY="9" width="128" height="118"/>
     </elements>
 </model>

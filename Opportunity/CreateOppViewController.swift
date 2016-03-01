@@ -8,28 +8,26 @@
 
 import UIKit
 
-let opps = [
-    [
-        "type": "Location",
-        "message": "Thi is location method"
-    ],
-    [
-        "type": "Weather",
-        "message": "> 20 degrees and sunny"
-    ]
-]
+protocol CreateConditionDelegate: class {
+    func createCondition(type: String, value: String, message: String)
+    func updateCondition(condition: Condition, type: String, value: String, message: String)
+}
 
-class CreateOppViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CreateOppViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CreateConditionDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var checkButton: UIBarButtonItem!
     @IBOutlet weak var colourButton: DesignableButton!
+    @IBOutlet weak var triggerIfLabel: DesignableLabel!
     
     @IBOutlet weak var nameTextField: DesignableTextField!
     
     var store: Store!
     // If in edit mode, this will be the opp we are editing
     var opp: Opp?
+    var conditions: [Condition] = []
+    var newOpp: Bool = false
     
     var colours = [colour1, colour2, colour3, colour4, colour5]
     var colourIndex = 0
@@ -47,14 +45,31 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
         self.title = creating ? "Create Opp" : "Edit Opp"
 
         if opp != nil {
+            conditions = []
+//            conditions = opp!.conditions != nil ? opp!.conditions! : []
             nameTextField.text = opp!.name!
             colourButton.backgroundColor = UIColor(hexString: opp!.colour!)
+        } else {
+            opp = store.createOpp("New Opp", colour: UIColor.clearColor(), conditions: [])
+            newOpp = true
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadConditions()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func reloadConditions() {
+        if opp != nil {
+            conditions = store.getConditionsForOpp(opp!)
+            tableView.reloadData()
+        }
     }
     
     // return true if opp is valid
@@ -73,7 +88,29 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
             nameTextField.animation = "shake"
             nameTextField.animate()
         }
-
+        if conditions.count == 0 {
+            triggerIfLabel.animation = "shake"
+            triggerIfLabel.animate()
+        }
+    }
+    
+    func popBack() {
+        // pop back to this view controller
+        self.navigationController?.popToViewController(self, animated: true)
+    }
+    
+    func createCondition(type: String, value: String, message: String) {
+        print("Create Condition [\(type), \(value) : \(message)")
+        store.createCondition(opp!, type: type, value: value, message: message)
+        reloadConditions()
+        popBack()
+    }
+    
+    func updateCondition(condition: Condition, type: String, value: String, message: String) {
+        print("Updating condition")
+        store.updateCondition(condition, ownerOpp: opp!, type: type, value: value, message: message)
+        reloadConditions()
+        popBack()
     }
     
     func backToList() {
@@ -81,6 +118,15 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func closeButtonDidTouch(sender: AnyObject) {
+        if newOpp && opp != nil {
+            store.deleteOpp(opp!)
+        } else {
+            for c in conditions {
+                if c.newlyCreated! == 1 {
+                    store.deleteCondition(c)
+                }
+            }
+        }
         backToList()
     }
 
@@ -90,20 +136,12 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
             let colour = colourButton.backgroundColor!
             // Create Opp
             if opp == nil {
-                store.createOpp(name, colour: colour)
+                store.createOpp(name, colour: colour, conditions: conditions)
             } else {
                 // Update Opp
-                opp!.name = name
-                opp!.colour = colour.toHexString()
+                store.fullSetConditionsForOpp(opp!)
+                store.setOppValues(opp!, name: name, colour: colour, conditions: conditions)
                 store.save()
-                
-//                let updateOpp = store.dataContext.opps.first{$ 0.objectID == opp!.objectID}
-                
-//                store.db.operation { (context, save) -> Void in
-//                    self.opp!.name = name
-//                    self.opp!.colour = colour.toHexString()
-//                    save()
-//                }
             }
             backToList()
         } else {
@@ -124,16 +162,34 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
     
     // MARK : Tableview
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        if indexPath.row == conditions.count {
+            return []
+        }
+        
+        let condition = conditions[indexPath.row]
+        let delete = UITableViewRowAction(style: .Normal, title: "Delete") { action, index in
+            self.store.deleteCondition(condition)
+            self.reloadConditions()
+        }
+        delete.backgroundColor = UIColor.redColor()
+        
+        return [delete]
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return opps.count + 1
+        return conditions.count + 1
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (indexPath.row == opps.count) {
+        if (indexPath.row == conditions.count) {
             return 100
         }
         return 80
@@ -143,32 +199,46 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
         
         var cell: UITableViewCell!
         
-        if (indexPath.row == opps.count) {
+        if (indexPath.row == conditions.count) {
             cell = tableView.dequeueReusableCellWithIdentifier("addConditionCell", forIndexPath: indexPath)
         } else {
-            let cond = opps[indexPath.row]
+            let cond = conditions[indexPath.row]
             cell = tableView.dequeueReusableCellWithIdentifier("conditionCell")
             if let condCell = cell as? CondTableViewCell {
-                condCell.typeLabel.text = cond["type"]?.uppercaseString
-                condCell.messageLabel.text = cond["message"]
+                condCell.typeLabel.text = cond.type!.uppercaseString
+                condCell.messageLabel.text = cond.message!
             }
         }
-
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //        self.performSegueWithIdentifier("addSegue", sender: self)
+        if (indexPath.row != conditions.count) {
+            let cond = conditions[indexPath.row]
+            let segue = cond.type!.stringByReplacingOccurrencesOfString(" ", withString: "")
+            performSegueWithIdentifier("\(segue)Segue", sender: cond)
+        }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let toView = segue.destinationViewController
+        if let addConditionView = toView as? AddConditionTableViewController {
+            addConditionView.delegate = self
+            addConditionView.opp = opp!
+        } else if let conditionView = toView as? ConditionViewController {
+            conditionView.delegate = self
+            if let cond = sender as? Condition {
+                conditionView.condition = cond
+            }
+        }
+//        if let conditionView = toView as? ConditionVIewController {
+//            if let cond = sender as? Condition {
+//                conditionView.condition = cond
+//            }
+//        }
     }
-    */
 
 }

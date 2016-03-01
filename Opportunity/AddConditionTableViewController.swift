@@ -9,8 +9,31 @@
 import UIKit
 
 class AddConditionTableViewController: UITableViewController {
-
-    let conditions = ["Time Range", "Weather", "Location", "Availbility", "Event"]
+    
+    var conditions = [
+        [
+            "type": "Time Range",
+            "disabled": false
+        ],
+        [
+            "type": "Weather",
+            "disabled": false
+        ],
+        [
+            "type": "Location",
+            "disabled": false
+        ],        [
+            "type": "Availbility",
+            "disabled": false
+        ],        [
+            "type": "Event",
+            "disabled": false
+        ]
+    ]
+//    let conditions = ["Time Range", "Weather", "Location", "Availbility", "Event"]
+    var opp: Opp?
+    
+    var delegate: CreateConditionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +43,24 @@ class AddConditionTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // TODO : CHANGE THIS
+        if opp != nil {
+            let oppConditions = Store.sharedInstance.getConditionsForOpp(opp!)
+            for oppC in oppConditions {
+                for (var i=0;i<conditions.count;i++) {
+                    let aC = conditions[i]
+                    if (aC["type"] as! String) == oppC.type! {
+                        conditions[i]["disabled"] = true
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,13 +82,17 @@ class AddConditionTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("AddConditionCell", forIndexPath: indexPath)
         let cond = conditions[indexPath.row]
         
-        cell.textLabel?.text = cond
+        cell.textLabel?.text = cond["type"] as? String
+        if (cond["disabled"] as! Bool) {
+            cell.backgroundColor = UIColor.lightGrayColor()
+            cell.userInteractionEnabled = false
+        }
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cond = conditions[indexPath.row]
-        let stripped = cond.stringByReplacingOccurrencesOfString(" ", withString: "")
+        let stripped = (cond["type"] as! String).stringByReplacingOccurrencesOfString(" ", withString: "")
         let segueId = "\(stripped)Segue"
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         performSegueWithIdentifier(segueId, sender: tableView.cellForRowAtIndexPath(indexPath))
@@ -88,14 +133,14 @@ class AddConditionTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let toView = segue.destinationViewController
+        if let conditionView = toView as? ConditionViewController {
+            conditionView.delegate = delegate
+        }
     }
-    */
 
 }

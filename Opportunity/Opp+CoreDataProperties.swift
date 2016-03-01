@@ -2,7 +2,7 @@
 //  Opp+CoreDataProperties.swift
 //  Opportunity
 //
-//  Created by Jake Runzer on 2016-02-27.
+//  Created by Jake Runzer on 2016-02-29.
 //  Copyright © 2016 FixCode. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,9 +14,11 @@ import CoreData
 
 extension Opp {
 
-    @NSManaged var name: String?
-    @NSManaged var dateCreated: NSDate?
     @NSManaged var colour: String?
-    @NSManaged var disabled: Bool
-    
+    @NSManaged var dateCreated: NSDate?
+    @NSManaged var disabled: NSNumber?
+    @NSManaged var name: String?
+    @NSManaged var conditions: NSSet?
+    @NSManaged var lastTriggered: NSDate?
+
 }

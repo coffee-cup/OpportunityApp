@@ -13,6 +13,7 @@ import AlecrimCoreData
 
 extension DataContext {
     var opps:      Table<Opp>     { return Table<Opp>(dataContext: self) }
+    var conditions:      Table<Condition>     { return Table<Condition>(dataContext: self) }
 }
 
 class Store {
@@ -34,23 +35,82 @@ class Store {
         return dataContext.opps.toArray()
     }
     
-    func createOpp(name: String, colour: UIColor) {
-        let opp = dataContext.opps.createEntity()
+    func setOppValues(opp: Opp, name: String, colour: UIColor, conditions: [Condition]) {
         opp.name = name
         opp.colour = colour.toHexString()
+//        opp.conditions = conditions
+    }
+    
+    func createOpp(name: String, colour: UIColor, conditions: [Condition]) -> Opp {
+        let opp = dataContext.opps.createEntity()
+        setOppValues(opp, name: name, colour: colour, conditions: conditions)
         opp.dateCreated = NSDate()
-        opp.disabled = false
+        opp.disabled = 0
         save()
+        return opp
     }
     
     func toggleDisabled(opp: Opp) {
-        opp.disabled = false
+        opp.disabled = opp.disabled! == 1 ? 0 : 1
         save()
     }
     
     func deleteOpp(opp: Opp) {
+        // delete all conditions belonging to opp to
+//        if opp.conditions != nil {
+//            for c in opp.conditions! {
+//                opp.removeConditionObject(c as! Condition)
+//                deleteCondition(c as! Condition)
+//            }
+//        }
+        let oppConditions = getConditionsForOpp(opp)
+        for c in oppConditions {
+            deleteCondition(c)
+        }
         dataContext.opps.deleteEntity(opp)
         save()
+    }
+    
+    func deleteCondition(condition: Condition) {
+        dataContext.conditions.deleteEntity(condition)
+        save()
+    }
+    
+    func getConditionsForOpp(opp: Opp) -> [Condition] {
+        let conditions = dataContext.conditions.filter{$0.ownerOpp == opp}
+        return conditions
+    }
+    
+    func createCondition(forOpp: Opp, type: String, value: String, message: String) {
+        let condition = dataContext.conditions.createEntity()
+        setConditionValues(condition, opp: forOpp, type: type, value: value, message: message)
+        condition.newlyCreated = true
+        if forOpp.conditions == nil {
+            forOpp.conditions = NSSet(object: condition)
+        } else {
+            forOpp.addConditionObject(condition)
+        }
+        save()
+    }
+    
+    func fullSetConditionsForOpp(forOpp: Opp) {
+        let conditions = getConditionsForOpp(forOpp)
+        for c in conditions {
+            c.newlyCreated = false
+        }
+        save()
+    }
+    
+    func updateCondition(condition: Condition, ownerOpp: Opp, type: String, value: String, message: String) {
+        setConditionValues(condition, opp: ownerOpp, type: type, value: value, message: message)
+        save()
+    }
+    
+    func setConditionValues(condition: Condition, opp: Opp, type: String, value: String, message: String) {
+        condition.ownerOpp = opp
+        condition.type = type
+        condition.value = value
+        condition.message = message
     }
     
     func save() {
