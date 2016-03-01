@@ -18,6 +18,8 @@ class Background {
         store = Store()
     }
     
+    // run background fetch and trigger any opps that can be triggered
+    // returns true or false if an opp was triggered
     func backgroundFetch() -> Bool {
         let opps = store.getOpps()
         var oneTriggered = false
