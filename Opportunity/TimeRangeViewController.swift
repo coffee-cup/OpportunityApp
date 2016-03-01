@@ -25,7 +25,7 @@ class TimeRangeViewController: ConditionViewController {
         if condition != nil {
             let values = ConditionParser.parseTimeRange(condition!.value!)
             timeSlider.lowerValue = Double(values.0)
-            timeSlider.upperValue = Double(values.1)
+            timeSlider.upperValue = Double(values.1+3)
         }
         betweenLabel.text = getMessage()
     }
@@ -67,10 +67,7 @@ class TimeRangeViewController: ConditionViewController {
     }
     
     @IBAction func timeSliderValueChanged(sender: AnyObject) {
-        let early = numToTimeString(timeSlider.lowerValue)
-        let late = numToTimeString(timeSlider.upperValue-3)
         betweenLabel.text = getMessage()
-//        print("Range slider value changed: (\(early) , \(late))")
     }
     
 }
