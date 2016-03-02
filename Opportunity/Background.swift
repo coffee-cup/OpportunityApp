@@ -84,7 +84,7 @@ class Background {
                 return false
             }
         }
-        return true
+        return conditions.count != 0
     }
     
     // returns true if condition passes and can trigger opp
