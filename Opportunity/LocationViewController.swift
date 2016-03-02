@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LocationViewController: UIViewController, CLLocationManagerDelegate {
+class LocationViewController: ConditionViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
@@ -20,10 +20,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let checkButton = UIBarButtonItem(image: UIImage(named: "check"), style: UIBarButtonItemStyle.Plain, target: self, action: "createCondition")
-        checkButton.tintColor = purpleColour
-        navigationItem.rightBarButtonItem = checkButton
+        mapView.delegate = self
         
         if (CLLocationManager.locationServicesEnabled())
         {
@@ -38,6 +35,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
         
         centerMapOnLocation(initialLocation)
+//        addRadiusCircle(initialLocation)
 
         // Do any additional setup after loading the view.
     }
@@ -58,6 +56,20 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    func addRadiusCircle(location: CLLocation){
+        let circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
+        self.mapView.addOverlay(circle)
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKCircle {
+            let circle = MKCircleRenderer(overlay: overlay)
+            circle.strokeColor = UIColor(red: 115, green: 92, blue: 221, alpha: 0.1)
+            circle.lineWidth = 1
+            return circle
+        }
+        return MKPolylineRenderer()
+    }
 
     /*
     // MARK: - Navigation

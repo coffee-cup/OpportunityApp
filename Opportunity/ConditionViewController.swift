@@ -14,6 +14,14 @@ class ConditionViewController: UIViewController {
 
     var condition: Condition?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let checkButton = UIBarButtonItem(image: UIImage(named: "check"), style: UIBarButtonItemStyle.Plain, target: self, action: "createCondition")
+        checkButton.tintColor = purpleColour
+        navigationItem.rightBarButtonItem = checkButton
+    }
+    
     func createUpdateCondition(type: String, value: String, message: String) {
         if condition == nil {
             // create new condition
@@ -24,4 +32,7 @@ class ConditionViewController: UIViewController {
         }
     }
     
+    func createCondition() {
+        print("you need to override createCondition")
+    }
 }

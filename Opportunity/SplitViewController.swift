@@ -15,6 +15,7 @@ class SplitViewController: UIViewController, OppListDelegate {
     
     @IBOutlet weak var activeTabView: UIView!
     @IBOutlet weak var createOppButton: UIBarButtonItem!
+    @IBOutlet weak var sortButton: UIBarButtonItem!
     
     var store: Store!
     
@@ -59,6 +60,38 @@ class SplitViewController: UIViewController, OppListDelegate {
             self.activeTabView.transform = CGAffineTransformMakeTranslation(0, 0)
             }, completion: {finished in
         })
+    }
+    
+    @IBAction func sortButtonDidTouch(sender: AnyObject) {
+        let optionMenu = UIAlertController(title: nil, message: "Sort Options", preferredStyle: .ActionSheet)
+        
+        
+        let nc = NSNotificationCenter.defaultCenter()
+        let sortName = UIAlertAction(title: "Sort by Nane", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            nc.postNotificationName("SortOpps", object: nil, userInfo: ["sortBy": "Name"])
+        })
+        let sortColour = UIAlertAction(title: "Sort by Colour", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            nc.postNotificationName("SortOpps", object: nil, userInfo: ["sortBy": "Colour"])
+        })
+        let sortDisabled = UIAlertAction(title: "Sort by Disabled", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            nc.postNotificationName("SortOpps", object: nil, userInfo: ["sortBy": "Disabled"])
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        
+        
+        optionMenu.addAction(sortName)
+        optionMenu.addAction(sortColour)
+        optionMenu.addAction(sortDisabled)
+        optionMenu.addAction(cancelAction)
+        
+        // 5
+        self.presentViewController(optionMenu, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

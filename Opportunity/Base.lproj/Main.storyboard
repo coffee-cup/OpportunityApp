@@ -294,8 +294,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Your Opps" id="v8Y-CW-8Fw">
+                        <barButtonItem key="leftBarButtonItem" image="sort" id="hv5-3z-Eal">
+                            <color key="tintColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="sortButtonDidTouch:" destination="Sm1-jY-SEy" id="bCI-0b-Vfj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PGA-8o-b2k">
-                            <color key="tintColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="createOppButtonDidTouch:" destination="Sm1-jY-SEy" id="FFm-tx-70S"/>
                             </connections>
@@ -307,6 +313,7 @@
                         <outlet property="createOppButton" destination="PGA-8o-b2k" id="nWu-fz-ixG"/>
                         <outlet property="oppListContainerView" destination="qZR-BY-FW7" id="4pI-yf-a2g"/>
                         <outlet property="settingsContainerView" destination="Jx2-S5-Kjs" id="ly7-lL-T79"/>
+                        <outlet property="sortButton" destination="hv5-3z-Eal" id="JEk-QK-qFP"/>
                         <segue destination="ptV-Po-9Ta" kind="show" identifier="addSegue" id="uRx-3Y-A9s"/>
                     </connections>
                 </viewController>
@@ -967,6 +974,7 @@
         <image name="pin_grey" width="21" height="36"/>
         <image name="pin_yellow" width="21" height="36"/>
         <image name="rain_grey" width="33" height="36"/>
+        <image name="sort" width="24" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PdT-d9-iAS"/>

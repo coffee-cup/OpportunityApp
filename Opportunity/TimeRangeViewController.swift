@@ -18,10 +18,6 @@ class TimeRangeViewController: ConditionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let checkButton = UIBarButtonItem(image: UIImage(named: "check"), style: UIBarButtonItemStyle.Plain, target: self, action: "createCondition")
-        checkButton.tintColor = purpleColour
-        navigationItem.rightBarButtonItem = checkButton
-        
         if condition != nil {
             let values = ConditionParser.parseTimeRange(condition!.value!)
             timeSlider.lowerValue = Double(values.0)
@@ -60,7 +56,7 @@ class TimeRangeViewController: ConditionViewController {
         return "\(num)\(ampm)"
     }
     
-    func createCondition() {
+    override func createCondition() {
         let message = getMessage()
         let value = "\(Int(timeSlider.lowerValue))|\(Int(timeSlider.upperValue)-3)"
         createUpdateCondition(type, value: value, message: message)
