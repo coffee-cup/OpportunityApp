@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SugarRecord
 
 protocol OppListDelegate: class {
     func selectCell(from: AnyObject?)
