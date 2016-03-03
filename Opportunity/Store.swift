@@ -53,7 +53,7 @@ class Store {
         setOppValues(opp, name: name, colour: colour, conditions: conditions)
         opp.dateCreated = NSDate()
         opp.disabled = 0
-        opp.read = 0
+        opp.read = 1
         save()
         return opp
     }
@@ -86,8 +86,16 @@ class Store {
         save()
     }
     
+    func setOppRead(opp: Opp) {
+        opp.read = 1
+        save()
+    }
+    
     func markOppsRead() {
-        let opps = getOpps()
+        for opp in getOpps() {
+            opp.read = 1
+        }
+        save()
     }
     
     func deleteCondition(condition: Condition) {

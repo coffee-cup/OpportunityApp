@@ -42,8 +42,9 @@ class OppsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let sortDesc = userDefaults.stringForKey("sortDesc") {
             self.sortDesc = sortDesc
         }
-
-        // Do any additional setup after loading the view.
+        
+        // Mark all opps as read
+        store.markOppsRead()
     }
     
     override func viewWillAppear(animated: Bool) {

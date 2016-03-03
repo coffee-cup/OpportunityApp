@@ -27,6 +27,7 @@ class Background {
             let shouldTrigger = parseOpp(opp)
             if shouldTrigger {
                 createTriggerNotification(opp)
+                store.setOppRead(opp)
                 oneTriggered = true
             }
         }
@@ -68,6 +69,9 @@ class Background {
 //                }
 //            }
 //        }
+        if opp.read == 0 {
+            return false
+        }
         if opp.lastTriggered != nil {
             let elapsedTime = NSDate().timeIntervalSinceDate(opp.lastTriggered!)
             if elapsedTime <= 30 * 60 { // 30 minutes
