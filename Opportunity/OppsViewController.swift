@@ -37,6 +37,11 @@ class OppsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let nc = NSNotificationCenter.defaultCenter()
         nc.addObserver(self, selector: "sortOpps:", name: "SortOpps", object: nil)
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let sortDesc = userDefaults.stringForKey("sortDesc") {
+            self.sortDesc = sortDesc
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -58,13 +63,7 @@ class OppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK : OPPS
     
     func loadOpps() {
-        if sortDesc == "Colour" {
-            opps = store.dataContext.opps.sort {$0.colour < $1.colour}
-        } else if sortDesc == "Name" {
-            opps = store.dataContext.opps.sort {$0.name < $1.name}
-        } else if sortDesc == "Disabled" {
-            opps = store.dataContext.opps.sort {$0.disabled!.integerValue < $1.disabled!.integerValue}
-        }
+        opps = store.getOpps(sortDesc)
         tableView.reloadData()
     }
     

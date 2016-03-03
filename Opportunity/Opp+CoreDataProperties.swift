@@ -20,5 +20,6 @@ extension Opp {
     @NSManaged var name: String?
     @NSManaged var conditions: NSSet?
     @NSManaged var lastTriggered: NSDate?
+    @NSManaged var read: NSNumber?
 
 }

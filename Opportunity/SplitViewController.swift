@@ -70,14 +70,17 @@ class SplitViewController: UIViewController, OppListDelegate {
         let sortName = UIAlertAction(title: "Sort by Nane", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             nc.postNotificationName("SortOpps", object: nil, userInfo: ["sortBy": "Name"])
+            NSUserDefaults.standardUserDefaults().setValue("Name", forKey: "sortDesc")
         })
         let sortColour = UIAlertAction(title: "Sort by Colour", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             nc.postNotificationName("SortOpps", object: nil, userInfo: ["sortBy": "Colour"])
+            NSUserDefaults.standardUserDefaults().setValue("Colour", forKey: "sortDesc")
         })
         let sortDisabled = UIAlertAction(title: "Sort by Disabled", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             nc.postNotificationName("SortOpps", object: nil, userInfo: ["sortBy": "Disabled"])
+            NSUserDefaults.standardUserDefaults().setValue("Disabled", forKey: "sortDesc")
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {

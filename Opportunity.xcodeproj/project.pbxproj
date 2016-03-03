@@ -97,6 +97,7 @@
 		9C214F5A1C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F561C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		9C5C53691C828F1600264C7A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C53671C828F1600264C7A /* Model.xcdatamodeld */; };
 		9C5C53AD1C82926800264C7A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C53AC1C82926800264C7A /* Store.swift */; };
+		9C748EEB1C87E4090087941E /* WeatherSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C748EEA1C87E4090087941E /* WeatherSegue.swift */; };
 		9C8E99411C83F64000AF522F /* Condition+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E993F1C83F64000AF522F /* Condition+CoreDataProperties.swift */; };
 		9C8E99421C83F64000AF522F /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99401C83F64000AF522F /* Condition.swift */; };
 		9C8E99441C84009500AF522F /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99431C84009500AF522F /* RangeSlider.swift */; };
@@ -198,6 +199,7 @@
 		9C214F561C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		9C5C53681C828F1600264C7A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9C5C53AC1C82926800264C7A /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9C748EEA1C87E4090087941E /* WeatherSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSegue.swift; sourceTree = "<group>"; };
 		9C8E993F1C83F64000AF522F /* Condition+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Condition+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9C8E99401C83F64000AF522F /* Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
 		9C8E99431C84009500AF522F /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 				9C8E99451C84056500AF522F /* TimeRangeViewController.swift */,
 				9C8E99471C8425D000AF522F /* ConditionViewController.swift */,
 				9C8E994F1C852FE500AF522F /* LocationViewController.swift */,
+				9C748EEA1C87E4090087941E /* WeatherSegue.swift */,
 			);
 			name = ConditionViews;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				9C0935C61C73129800E9078C /* DesignableLabel.swift in Sources */,
 				9C0936121C73F8BD00E9078C /* SettingsViewController.swift in Sources */,
 				9C0935EE1C73129800E9078C /* TransitionManager.swift in Sources */,
+				9C748EEB1C87E4090087941E /* WeatherSegue.swift in Sources */,
 				9C5C53AD1C82926800264C7A /* Store.swift in Sources */,
 				9C0935CA1C73129800E9078C /* DesignableTextField.swift in Sources */,
 				9C0935D61C73129800E9078C /* LoadingView.swift in Sources */,

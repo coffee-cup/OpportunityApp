@@ -502,13 +502,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Create Opp" id="HER-45-hNZ">
                         <barButtonItem key="leftBarButtonItem" image="close" id="sDZ-Y4-Euh">
-                            <color key="tintColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="closeButtonDidTouch:" destination="ptV-Po-9Ta" id="r43-hb-Jtq"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="check" id="6ku-xR-XwJ">
-                            <color key="tintColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="checkButtonDidTouch:" destination="ptV-Po-9Ta" id="3GY-IX-SYh"/>
                             </connections>
@@ -524,6 +524,7 @@
                         <outlet property="tableView" destination="5At-PY-V8S" id="cY3-pl-bjz"/>
                         <outlet property="triggerIfLabel" destination="aKo-SK-Tgu" id="jR8-Ro-YYl"/>
                         <segue destination="RN6-Fj-oQM" kind="show" identifier="TimeRangeSegue" id="PdT-d9-iAS"/>
+                        <segue destination="N7k-Jv-3Y6" kind="show" identifier="WeatherSegue" id="4ZL-9X-l0O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHB-Q4-hSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -978,5 +979,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PdT-d9-iAS"/>
+        <segue reference="4ZL-9X-l0O"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -13,10 +13,11 @@
         <attribute name="disabled" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="lastTriggered" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="read" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="conditions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Condition" inverseName="ownerOpp" inverseEntity="Condition" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Opp" positionX="117" positionY="-21" width="128" height="133"/>
         <element name="Condition" positionX="-63" positionY="9" width="128" height="118"/>
+        <element name="Opp" positionX="115" positionY="-7" width="128" height="148"/>
     </elements>
 </model>

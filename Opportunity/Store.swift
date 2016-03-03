@@ -31,7 +31,14 @@ class Store {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     }
     
-    func getOpps() -> [Opp] {
+    func getOpps(sortDesc: String = "Name") -> [Opp] {
+        if sortDesc == "Colour" {
+            return dataContext.opps.sort {$0.colour < $1.colour}
+        } else if sortDesc == "Name" {
+            return dataContext.opps.sort {$0.name < $1.name}
+        } else if sortDesc == "Disabled" {
+            return dataContext.opps.sort {$0.disabled!.integerValue < $1.disabled!.integerValue}
+        }
         return dataContext.opps.toArray()
     }
     
@@ -46,6 +53,7 @@ class Store {
         setOppValues(opp, name: name, colour: colour, conditions: conditions)
         opp.dateCreated = NSDate()
         opp.disabled = 0
+        opp.read = 0
         save()
         return opp
     }
@@ -76,6 +84,10 @@ class Store {
         }
         dataContext.opps.deleteEntity(opp)
         save()
+    }
+    
+    func markOppsRead() {
+        let opps = getOpps()
     }
     
     func deleteCondition(condition: Condition) {
