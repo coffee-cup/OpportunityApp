@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import Alamofire
+
+let WEATHER_APIKEY = "f08fa2990158d409a6f4998960cddfa1"
 
 // Class to handle all background tasks
 class Background {
@@ -21,6 +24,8 @@ class Background {
     // run background fetch and trigger any opps that can be triggered
     // returns true or false if an opp was triggered
     func backgroundFetch() -> Bool {
+        checkWeather()
+        
         let opps = store.getOpps()
         var oneTriggered = false
         for opp in opps {
@@ -98,6 +103,20 @@ class Background {
             return checkTimeRange(condition)
         }
         return false
+    }
+    
+    func checkWeather() {
+//        Alamofire.request(.GET, "https://httpbin.org/get", parameters: ["foo": "bar"])
+//            .responseJSON { response in
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)   // result of response serialization
+//                
+//                if let JSON = response.result.value {
+//                    print("JSON: \(JSON)")
+//                }
+//        }
     }
     
     // parses and checks time range condition and returns
