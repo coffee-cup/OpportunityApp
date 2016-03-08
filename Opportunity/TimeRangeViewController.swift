@@ -32,7 +32,7 @@ class TimeRangeViewController: ConditionViewController {
         
     func getMessage() -> String {
         let early = numToTimeString(timeSlider.lowerValue)
-        let late = numToTimeString(timeSlider.upperValue-3)
+        let late = numToTimeString(round(timeSlider.upperValue-3))
         return "Between \(early) and \(late)"
     }
     
@@ -58,7 +58,7 @@ class TimeRangeViewController: ConditionViewController {
     
     override func createCondition() {
         let message = getMessage()
-        let value = "\(Int(timeSlider.lowerValue))|\(Int(timeSlider.upperValue)-3)"
+        let value = "\(Int(round(timeSlider.lowerValue)))|\(Int(round(timeSlider.upperValue))-3)"
         createUpdateCondition(type, value: value, message: message)
     }
     
