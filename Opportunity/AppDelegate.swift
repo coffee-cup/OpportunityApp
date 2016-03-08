@@ -83,11 +83,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         
         let background = Background()
-        let oneTriggered: Bool = background.backgroundFetch()
-        if oneTriggered {
-            completionHandler(UIBackgroundFetchResult.NewData)
-        } else {
-            completionHandler(UIBackgroundFetchResult.NoData)
+        background.backgroundFetch().then { (value) -> Value in
+            if let oneTriggered = value as? Bool {
+                if oneTriggered {
+                    completionHandler(UIBackgroundFetchResult.NewData)
+                } else {
+                    completionHandler(UIBackgroundFetchResult.NoData)
+                }
+            }
+            return nil
         }
 
 //        let qualityOfServiceClass = QOS_CLASS_BACKGROUND

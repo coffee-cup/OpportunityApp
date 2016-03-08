@@ -31,7 +31,7 @@ class WeatherSegue: ConditionViewController {
     var lessThan = true
     var temperture: Int?
     
-    let type = "Weather"
+    let type = WEATHER
     
     override func viewDidLoad() {
         super.viewDidLoad()

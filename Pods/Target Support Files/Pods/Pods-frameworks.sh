@@ -87,9 +87,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/AlecrimCoreData.framework"
   install_framework "Pods/PermissionScope.framework"
+  install_framework "Pods/SwiftLocation.framework"
+  install_framework "Pods/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
   install_framework "Pods/AlecrimCoreData.framework"
   install_framework "Pods/PermissionScope.framework"
+  install_framework "Pods/SwiftLocation.framework"
+  install_framework "Pods/SwiftyJSON.framework"
 fi

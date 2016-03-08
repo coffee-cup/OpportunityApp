@@ -13,7 +13,7 @@ class TimeRangeViewController: ConditionViewController {
     @IBOutlet weak var timeSlider: RangeSlider!
     @IBOutlet weak var betweenLabel: UILabel!
     
-    let type = "Time Range"
+    let type = TIME_RANGE
         
     override func viewDidLoad() {
         super.viewDidLoad()

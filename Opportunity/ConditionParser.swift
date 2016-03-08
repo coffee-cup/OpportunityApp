@@ -9,6 +9,7 @@
 import Foundation
 
 let TIME_RANGE = "Time Range"
+let WEATHER = "Weather"
 
 class ConditionParser {
     

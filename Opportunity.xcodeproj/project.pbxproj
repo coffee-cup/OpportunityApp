@@ -91,6 +91,12 @@
 		9C0DCAC91C82A0D700FD2FF5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DCAC81C82A0D700FD2FF5 /* Test.swift */; };
 		9C0DCACD1C82A6BE00FD2FF5 /* OppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */; };
 		9C0DCACF1C82ABFD00FD2FF5 /* CreateOppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C09360E1C73D96900E9078C /* CreateOppViewController.swift */; };
+		9C1114831C8F62DE00839466 /* Craft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11147E1C8F62DE00839466 /* Craft.swift */; };
+		9C1114841C8F62DE00839466 /* Deferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C11147F1C8F62DE00839466 /* Deferred.swift */; };
+		9C1114851C8F62DE00839466 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C1114801C8F62DE00839466 /* Info.plist */; };
+		9C1114861C8F62DE00839466 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1114811C8F62DE00839466 /* Promise.swift */; };
+		9C1114871C8F62DE00839466 /* SettledResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1114821C8F62DE00839466 /* SettledResult.swift */; };
+		9C1E13961C8EC31B009EAD0B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E13951C8EC31B009EAD0B /* Location.swift */; };
 		9C214F571C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F501C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m */; };
 		9C214F581C76923200F3C38C /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F521C76923200F3C38C /* TPKeyboardAvoidingScrollView.m */; };
 		9C214F591C76923200F3C38C /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F541C76923200F3C38C /* TPKeyboardAvoidingTableView.m */; };
@@ -189,6 +195,13 @@
 		9C0936171C74022200E9078C /* OppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppsViewController.swift; sourceTree = "<group>"; };
 		9C0DCAC81C82A0D700FD2FF5 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OppTableViewCell.swift; sourceTree = "<group>"; };
+		9C11147D1C8F62DE00839466 /* craft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = craft.h; sourceTree = "<group>"; };
+		9C11147E1C8F62DE00839466 /* Craft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Craft.swift; sourceTree = "<group>"; };
+		9C11147F1C8F62DE00839466 /* Deferred.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deferred.swift; sourceTree = "<group>"; };
+		9C1114801C8F62DE00839466 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C1114811C8F62DE00839466 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		9C1114821C8F62DE00839466 /* SettledResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettledResult.swift; sourceTree = "<group>"; };
+		9C1E13951C8EC31B009EAD0B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9C214F4F1C76923200F3C38C /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		9C214F501C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		9C214F511C76923200F3C38C /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
@@ -268,6 +281,7 @@
 		9C0935641C730F8D00E9078C /* Opportunity */ = {
 			isa = PBXGroup;
 			children = (
+				9C11147C1C8F62DE00839466 /* craft */,
 				9C0935751C730F8D00E9078C /* Info.plist */,
 				9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */,
 				9C0935651C730F8D00E9078C /* AppDelegate.swift */,
@@ -276,6 +290,7 @@
 				9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */,
 				9C09360E1C73D96900E9078C /* CreateOppViewController.swift */,
 				9C0935FD1C731B6F00E9078C /* ListViewController.swift */,
+				9C1E13951C8EC31B009EAD0B /* Location.swift */,
 				9C0936171C74022200E9078C /* OppsViewController.swift */,
 				9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */,
 				9C8E99431C84009500AF522F /* RangeSlider.swift */,
@@ -370,6 +385,19 @@
 				9C0936061C73D32C00E9078C /* Sweetercolor.swift */,
 			);
 			path = Sweetercolor;
+			sourceTree = "<group>";
+		};
+		9C11147C1C8F62DE00839466 /* craft */ = {
+			isa = PBXGroup;
+			children = (
+				9C11147D1C8F62DE00839466 /* craft.h */,
+				9C11147E1C8F62DE00839466 /* Craft.swift */,
+				9C11147F1C8F62DE00839466 /* Deferred.swift */,
+				9C1114801C8F62DE00839466 /* Info.plist */,
+				9C1114811C8F62DE00839466 /* Promise.swift */,
+				9C1114821C8F62DE00839466 /* SettledResult.swift */,
+			);
+			path = craft;
 			sourceTree = "<group>";
 		};
 		9C214F4E1C76923200F3C38C /* TPKeyboardAvoiding */ = {
@@ -542,6 +570,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1114851C8F62DE00839466 /* Info.plist in Resources */,
 				9C0935991C7311EA00E9078C /* Avenir.ttc in Resources */,
 				9C0935741C730F8D00E9078C /* LaunchScreen.storyboard in Resources */,
 				9C0935D81C73129800E9078C /* LoadingView.xib in Resources */,
@@ -628,10 +657,12 @@
 			files = (
 				9C0935C01C73129800E9078C /* BlurView.swift in Sources */,
 				9C8E994C1C84FA6D00AF522F /* Opp.swift in Sources */,
+				9C1114861C8F62DE00839466 /* Promise.swift in Sources */,
 				9C0935D41C73129800E9078C /* KeyboardLayoutConstraint.swift in Sources */,
 				9C0935EA1C73129800E9078C /* SpringTextView.swift in Sources */,
 				9C0DCACD1C82A6BE00FD2FF5 /* OppTableViewCell.swift in Sources */,
 				9C0935BA1C73129800E9078C /* AsyncButton.swift in Sources */,
+				9C1E13961C8EC31B009EAD0B /* Location.swift in Sources */,
 				9C0935CC1C73129800E9078C /* DesignableTextView.swift in Sources */,
 				9C0935F21C73129800E9078C /* UnwindSegue.swift in Sources */,
 				9C0936011C73D28B00E9078C /* Styles.swift in Sources */,
@@ -657,6 +688,7 @@
 				9C0935DA1C73129800E9078C /* Misc.swift in Sources */,
 				9C0DCACF1C82ABFD00FD2FF5 /* CreateOppViewController.swift in Sources */,
 				9C0935CE1C73129800E9078C /* DesignableView.swift in Sources */,
+				9C1114831C8F62DE00839466 /* Craft.swift in Sources */,
 				9C0935FE1C731B6F00E9078C /* ListViewController.swift in Sources */,
 				9C0935EC1C73129800E9078C /* SpringView.swift in Sources */,
 				9C8E99501C852FE500AF522F /* LocationViewController.swift in Sources */,
@@ -681,7 +713,9 @@
 				9C0935D61C73129800E9078C /* LoadingView.swift in Sources */,
 				9CACEB291C7FCB8000C4B5E7 /* CondTableViewCell.swift in Sources */,
 				9C8E99411C83F64000AF522F /* Condition+CoreDataProperties.swift in Sources */,
+				9C1114871C8F62DE00839466 /* SettledResult.swift in Sources */,
 				9C8E99481C8425D000AF522F /* ConditionViewController.swift in Sources */,
+				9C1114841C8F62DE00839466 /* Deferred.swift in Sources */,
 				9C0935DE1C73129800E9078C /* Spring.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
