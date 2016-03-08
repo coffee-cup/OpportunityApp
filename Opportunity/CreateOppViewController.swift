@@ -78,6 +78,9 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
         if name == "" {
             return false
         }
+        if conditions.count == 0 {
+            return false
+        }
         return true
     }
     
