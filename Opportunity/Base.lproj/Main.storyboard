@@ -601,8 +601,11 @@
                                 <color key="textColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="0.49627850509999999" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22°C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-hG-8aL">
-                                <rect key="frame" x="309" y="145" width="36" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-hG-8aL">
+                                <rect key="frame" x="295" y="145" width="50" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="YBr-yl-tA5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -616,6 +619,9 @@
                                 <state key="selected">
                                     <color key="titleColor" red="0.023529411760000001" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="lessThanDidTouch:" destination="N7k-Jv-3Y6" eventType="touchUpInside" id="Cts-dA-Xf2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZL-na-xCs" customClass="DesignableButton" customModule="Opportunity" customModuleProvider="target">
                                 <rect key="frame" x="195" y="109" width="77" height="32"/>
@@ -626,10 +632,16 @@
                                 <state key="selected">
                                     <color key="titleColor" red="0.023529411760000001" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="greaterThanDidTouch:" destination="N7k-Jv-3Y6" eventType="touchUpInside" id="HUs-4R-soQ"/>
+                                </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rfk-jr-c14">
-                                <rect key="frame" x="78" y="141" width="223" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-50" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="Rfk-jr-c14">
+                                <rect key="frame" x="78" y="141" width="209" height="31"/>
                                 <color key="tintColor" red="0.023529411760000001" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="tempertureSliderDidChange:" destination="N7k-Jv-3Y6" eventType="valueChanged" id="Ngy-gr-4OC"/>
+                                </connections>
                             </slider>
                             <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iij-H0-lmd">
                                 <rect key="frame" x="30" y="181" width="315" height="1"/>
@@ -639,7 +651,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnu-Z1-K3B" customClass="DesignableButton" customModule="Opportunity" customModuleProvider="target">
-                                <rect key="frame" x="30" y="113" width="25" height="25"/>
+                                <rect key="frame" x="30" y="112" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Qnu-Z1-K3B" secondAttribute="height" multiplier="1:1" id="2QO-5Z-Hjh"/>
                                     <constraint firstAttribute="width" constant="25" id="hxu-Oe-HDl"/>
@@ -1027,11 +1039,15 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="cloudsButton" destination="9CN-w4-uLd" id="Og2-JS-qAB"/>
-                        <outlet property="greaterThanButton" destination="dZL-na-xCs" id="hMy-FQ-xWP"/>
-                        <outlet property="lessThanButton" destination="eHs-Wm-gZq" id="8tt-LH-5zI"/>
+                        <outlet property="cloudsView" destination="SPL-Iu-nIJ" id="cm2-Nk-i9E"/>
+                        <outlet property="greaterThanButton" destination="dZL-na-xCs" id="REq-uR-YHt"/>
+                        <outlet property="lessThanButton" destination="eHs-Wm-gZq" id="bqj-F0-jvi"/>
                         <outlet property="rainButton" destination="0R4-RM-sgt" id="7Nj-0o-khp"/>
+                        <outlet property="rainView" destination="oM9-g8-eQG" id="16M-M0-1n8"/>
                         <outlet property="snowButton" destination="SiA-gh-CGD" id="Mds-Wg-v7V"/>
+                        <outlet property="snowView" destination="pan-PF-Njj" id="9re-hS-5cI"/>
                         <outlet property="sunButton" destination="GEH-Lb-Mi6" id="Xfd-8S-rqn"/>
+                        <outlet property="sunView" destination="pK1-fI-o1m" id="dCZ-1v-WzC"/>
                         <outlet property="tempertureButton" destination="Qnu-Z1-K3B" id="bqz-KC-cbu"/>
                         <outlet property="tempertureLabel" destination="1oQ-hG-8aL" id="naN-XB-bCt"/>
                         <outlet property="tempertureSlider" destination="Rfk-jr-c14" id="0v2-bE-qSf"/>
