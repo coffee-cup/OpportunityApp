@@ -93,7 +93,7 @@ class WeatherSegue: ConditionViewController {
                 sign = ">"
             }
             temp = "\(sign)\(temperture!)"
-            message += "Temperture is \(temp)"
+            message += "Temperture is \(temp)°C"
         }
         if selectedButton != nil {
             if selectedButton == sunButton {
