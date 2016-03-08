@@ -213,7 +213,7 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row != conditions.count) {
             let cond = conditions[indexPath.row]
-            let segue = cond.type!.stringByReplacingOccurrencesOfString(" ", withString: "")
+            let segue = cond.type!.stringByReplacingOccurrencesOfString(" ", withString: "").capitalizedString
             performSegueWithIdentifier("\(segue)Segue", sender: cond)
         }
     }

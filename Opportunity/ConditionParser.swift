@@ -20,4 +20,23 @@ class ConditionParser {
         let upValue = Int(array[1])!
         return (lowValue, upValue)
     }
+    
+    // parses weather condition
+    // returns tuple (sign string, temp?, skyString?)
+    class func parseWeather(value: String) -> (String, Int?, String?) {
+        let array = value.componentsSeparatedByString("|")
+        var sign: String = ""
+        var temp: Int?
+        var sky: String?
+        
+        if array[0] != "none" {
+            sign = array[0].substringToIndex(array[0].startIndex.advancedBy(1))
+            temp = Int(array[0].substringFromIndex(array[0].startIndex.advancedBy(1)))
+        }
+        if array[1] != "none" {
+            sky = array[1]
+        }
+        
+        return (sign, temp, sky)
+    }
 }

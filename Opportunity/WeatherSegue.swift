@@ -28,8 +28,10 @@ class WeatherSegue: ConditionViewController {
     @IBOutlet weak var rainView: UIView!
     @IBOutlet weak var snowView: UIView!
     
-    var lessThan = true // start opposite
-    var temperture: Int = 23
+    var lessThan = true
+    var temperture: Int?
+    
+    let type = "Weather"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,30 @@ class WeatherSegue: ConditionViewController {
         rainView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "rainViewTap"))
         snowView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "snowViewTap"))
         
+        // Init UI values from editing condition
+        if condition != nil {
+            let values = ConditionParser.parseWeather(condition!.value!)
+            if values.1 != nil {
+                tempertureSlider.value = Float(values.1!)
+                if values.0 == ">" {
+                    lessThan = false
+                }
+                tempertureToggleDidTouch(tempertureButton)
+            }
+            if values.2 != nil {
+                if values.2! == "sun" {
+                    selectedButton = sunButton
+                } else if values.2! == "clouds" {
+                    selectedButton = cloudsButton
+                } else if values.2! == "rain" {
+                    selectedButton = rainButton
+                } else if values.2! == "snow" {
+                    selectedButton = snowButton
+                }
+                animateToggleButton(selectedButton!)
+            }
+        }
+        
         toggleThanButtons()
         setTempertureLabel()
     }
@@ -57,7 +83,54 @@ class WeatherSegue: ConditionViewController {
     }
     
     override func createCondition() {
+        var sky: String = "none"
+        var skyString: String = ""
+        var temp: String = "none"
+        var sign: String = "<"
+        var message: String = ""
+        if temperture != nil {
+            if !lessThan {
+                sign = ">"
+            }
+            temp = "\(sign)\(temperture!)"
+            message += "Temperture is \(temp)"
+        }
+        if selectedButton != nil {
+            if selectedButton == sunButton {
+                sky = "sun"
+                skyString = "sunny"
+            } else if selectedButton == cloudsButton {
+                sky = "clouds"
+                skyString = "cloudy"
+            } else if selectedButton == rainButton {
+                sky = "rain"
+                skyString = "rainy"
+            } else if selectedButton == snowButton {
+                sky = "snow"
+                skyString = "snowy"
+            }
+            if temperture != nil {
+                message += " and it is \(skyString)"
+            } else {
+                message += "It is \(skyString.capitalizedString)"
+            }
+        }
+        let value = "\(temp)|\(sky)"
         
+        if value != "none|none" {
+            self.createUpdateCondition(type, value: value, message: message)
+        } else {
+            tempertureButton.animation = "shake"
+            tempertureButton.animate()
+            
+            var delay: CGFloat = 0.100
+            for b in skyButtons {
+                b.delay = delay
+                b.animation = "shake"
+                b.animate()
+                delay += 0.100
+            }
+        }
     }
     
     func buttonOn(button: DesignableButton) -> Bool {
@@ -110,6 +183,10 @@ class WeatherSegue: ConditionViewController {
     }
     
     @IBAction func tempertureSliderDidChange(sender: AnyObject) {
+        if !buttonOn(tempertureButton) {
+             tempertureToggleDidTouch(tempertureButton)   
+        }
+        temperture = Int(tempertureSlider.value)
         setTempertureLabel()
     }
     
@@ -124,6 +201,14 @@ class WeatherSegue: ConditionViewController {
     }
     
     @IBAction func tempertureToggleDidTouch(sender: AnyObject) {
+        if buttonOn(tempertureButton) {
+            // set no temperature
+            temperture = nil
+        } else {
+            // set temperature
+            setTempertureLabel()
+            temperture = Int(tempertureSlider.value)
+        }
         animateToggleButton(tempertureButton)
     }
     

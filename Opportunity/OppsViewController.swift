@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PermissionScope
 
 protocol OppListDelegate: class {
     func selectCell(from: AnyObject?)
@@ -15,6 +16,7 @@ protocol OppListDelegate: class {
 class OppsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    let pscope = PermissionScope()
     
     weak var delegate: OppListDelegate?
     
@@ -45,6 +47,8 @@ class OppsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Mark all opps as read
         store.markOppsRead()
+        
+        setupPermissions()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,6 +63,21 @@ class OppsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupPermissions() {
+        // Set up permissions
+        pscope.addPermission(NotificationsPermission(notificationCategories: nil),
+            message: "We use this to send you Opp notifications")
+        pscope.addPermission(LocationAlwaysPermission(),
+            message: "We use this to trigger Opps based on your location")
+        
+        // Show dialog with callbacks
+        pscope.show({ finished, results in
+//            print("got results \(results)")
+            }, cancelled: { (results) -> Void in
+//                print("thing was cancelled")
+        })
     }
     
     // MARK : OPPS

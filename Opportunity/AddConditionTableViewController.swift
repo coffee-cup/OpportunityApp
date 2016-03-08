@@ -54,7 +54,8 @@ class AddConditionTableViewController: UITableViewController {
             for oppC in oppConditions {
                 for (var i=0;i<conditions.count;i++) {
                     let aC = conditions[i]
-                    if (aC["type"] as! String) == oppC.type! {
+                    let type = (aC["type"] as! String).uppercaseString
+                    if type == oppC.type!.uppercaseString {
                         conditions[i]["disabled"] = true
                     }
                 }
