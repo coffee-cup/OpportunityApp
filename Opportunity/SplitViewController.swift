@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PermissionScope
 
 class SplitViewController: UIViewController, OppListDelegate {
 
@@ -18,6 +19,7 @@ class SplitViewController: UIViewController, OppListDelegate {
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
     var store: Store!
+    let pscope = PermissionScope()
     
     let ANIMATION_DURATION = 0.175
     
@@ -26,6 +28,8 @@ class SplitViewController: UIViewController, OppListDelegate {
         
 //        store = Store(forClass: SplitViewController.classForCoder())
         store = Store.sharedInstance
+        
+        setupPermissions()
         
         // Do any additional setup after loading the view.
         showList()
@@ -40,6 +44,26 @@ class SplitViewController: UIViewController, OppListDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupPermissions() {
+        // Set up permissions
+        pscope.addPermission(NotificationsPermission(notificationCategories: nil),
+            message: "We use this to send you Opp notifications")
+        pscope.addPermission(LocationAlwaysPermission(),
+            message: "We use this to trigger Opps based on your location")
+        
+        pscope.closeButtonTextColor = UIColor.redColor()
+        pscope.permissionButtonTextColor = purpleColour
+        pscope.permissionButtonBorderColor = purpleColour
+        pscope.authorizedButtonColor = greenColour
+        
+        // Show dialog with callbacks
+        pscope.show({ finished, results in
+            //            print("got results \(results)")
+            }, cancelled: { (results) -> Void in
+                //                print("thing was cancelled")
+        })
     }
     
     func showSettings() {
