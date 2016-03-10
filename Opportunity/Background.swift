@@ -51,10 +51,11 @@ class Background {
     // run background fetch and trigger any opps that can be triggered
     // returns true or false if an opp was triggered
     func backgroundFetch() -> Promise {
+        print("perform background fetch")
         let promise = Craft.promise({
             (resolve: (value: Value) -> (), reject: (value: Value) -> ()) -> () in
             
-            let opps = self.store.getOpps()
+            let opps = self.store.getNotDisabled()
             var oneTriggered = false
             
             var oppPromises: [Promise] = [Promise]()
@@ -68,6 +69,7 @@ class Background {
             Craft.allSettled(oppPromises).then({
                 (value: Value) -> Value in
                 
+                print("all opp promises settled")
                 if let v: [Value] = value as? [Value] {
                     
                     // loop through opp promises to see if an opp was triggered
@@ -93,9 +95,9 @@ class Background {
     
     func createTriggerNotification(opp: Opp) {
         // if there is already a notification for this opp, do not make a new one
-        if !allowedNotification(opp) {
-            return
-        }
+//        if !allowedNotification(opp) {
+//            return
+//        }
         
         let notification = UILocalNotification()
         notification.alertBody = opp.name!
@@ -114,7 +116,7 @@ class Background {
     
     // returns whether or not we are allowed to set notification for opp
     func allowedNotification(opp: Opp) -> Bool {
-        if opp.read == 0 {
+        if opp.read == 0  || opp.disabled == 1 {
             return false
         }
         // only all opp to be triggered once every 30 minutes
@@ -220,12 +222,15 @@ class Background {
             let lon = coords.longitude.description
             Alamofire.request(.GET, WEATHER_URL, parameters: ["lat": lat, "lon": lon, "appid": WEATHER_APIKEY])
                 .responseJSON { response in
+//                    print(response.request) // print url
                     let json = JSON(data: response.data!)
+                    print(json)
                     let weather = WeatherSet()
                     if let temp = json["main"]["temp"].number {
                         weather.temp = Int(temp.floatValue - KELVIN)
                         weather.set = true
                     }
+                    print(json["weather"])
                     if let sky = json["weather"][0]["main"].string {
                         // I know this is poop
                         if sky == "Rain" {
@@ -285,11 +290,13 @@ class Background {
                                     }
                                 }
                                 if values.2 != nil {
+                                    print("WEATHER: need \(values.2!) got \(weather.sky)")
                                     if values.2! != weather.sky {
                                         shouldPass = false
                                     }
                                 }
                             }
+                            print("should pass: \(shouldPass)")
                             resolve(value: shouldPass)
                         } else {
                             resolve(value: false)

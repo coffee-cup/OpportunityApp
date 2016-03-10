@@ -42,6 +42,10 @@ class Store {
         return dataContext.opps.toArray()
     }
     
+    func getNotDisabled() -> [Opp] {
+        return dataContext.opps.filter {$0.disabled == 0}
+    }
+    
     func setOppValues(opp: Opp, name: String, colour: UIColor, conditions: [Condition]) {
         opp.name = name
         opp.colour = colour.toHexString()
