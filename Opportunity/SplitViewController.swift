@@ -74,6 +74,7 @@ class SplitViewController: UIViewController, OppListDelegate {
             self.activeTabView.transform = CGAffineTransformMakeTranslation(self.activeTabView.bounds.width, 0)
             }, completion: {finished in
         })
+        self.title = "Trigger History"
     }
     
     func showList() {
@@ -84,6 +85,7 @@ class SplitViewController: UIViewController, OppListDelegate {
             self.activeTabView.transform = CGAffineTransformMakeTranslation(0, 0)
             }, completion: {finished in
         })
+        self.title = "Your Opps"
     }
     
     @IBAction func sortButtonDidTouch(sender: AnyObject) {

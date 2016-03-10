@@ -18,17 +18,17 @@ class AddConditionTableViewController: UITableViewController {
         [
             "type": "Weather",
             "disabled": false
-        ],
-        [
-            "type": "Location",
-            "disabled": false
-        ],        [
-            "type": "Availbility",
-            "disabled": false
-        ],        [
-            "type": "Event",
-            "disabled": false
         ]
+//        [
+//            "type": "Location",
+//            "disabled": false
+//        ],        [
+//            "type": "Availbility",
+//            "disabled": false
+//        ],        [
+//            "type": "Event",
+//            "disabled": false
+//        ]
     ]
 //    let conditions = ["Time Range", "Weather", "Location", "Availbility", "Event"]
     var opp: Opp?

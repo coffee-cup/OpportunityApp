@@ -224,13 +224,13 @@ class Background {
                 .responseJSON { response in
 //                    print(response.request) // print url
                     let json = JSON(data: response.data!)
-                    print(json)
+//                    print(json)
                     let weather = WeatherSet()
                     if let temp = json["main"]["temp"].number {
                         weather.temp = Int(temp.floatValue - KELVIN)
                         weather.set = true
                     }
-                    print(json["weather"])
+//                    print(json["weather"])
                     if let sky = json["weather"][0]["main"].string {
                         // I know this is poop
                         if sky == "Rain" {

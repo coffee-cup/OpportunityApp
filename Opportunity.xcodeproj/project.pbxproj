@@ -85,7 +85,6 @@
 		9C09360C1C73D49F00E9078C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C09360B1C73D49F00E9078C /* Assets.xcassets */; };
 		9C09360D1C73D49F00E9078C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C09360B1C73D49F00E9078C /* Assets.xcassets */; };
 		9C0936121C73F8BD00E9078C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0936111C73F8BD00E9078C /* SettingsViewController.swift */; };
-		9C0936131C73F8BD00E9078C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0936111C73F8BD00E9078C /* SettingsViewController.swift */; };
 		9C0936151C74005700E9078C /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0936141C74005700E9078C /* SplitViewController.swift */; };
 		9C0936181C74022200E9078C /* OppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0936171C74022200E9078C /* OppsViewController.swift */; };
 		9C0DCAC91C82A0D700FD2FF5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0DCAC81C82A0D700FD2FF5 /* Test.swift */; };
@@ -101,6 +100,10 @@
 		9C214F581C76923200F3C38C /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F521C76923200F3C38C /* TPKeyboardAvoidingScrollView.m */; };
 		9C214F591C76923200F3C38C /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F541C76923200F3C38C /* TPKeyboardAvoidingTableView.m */; };
 		9C214F5A1C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C214F561C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		9C4D6E5F1C9160040035B4E3 /* Hist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D6E5D1C9160040035B4E3 /* Hist+CoreDataProperties.swift */; };
+		9C4D6E601C9160040035B4E3 /* Hist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D6E5E1C9160040035B4E3 /* Hist.swift */; };
+		9C4D6E831C9165340035B4E3 /* HistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D6E821C9165340035B4E3 /* HistTableViewCell.swift */; };
+		9C4D6E851C916ED80035B4E3 /* NSDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D6E841C916ED80035B4E3 /* NSDate+Extensions.swift */; };
 		9C5C53691C828F1600264C7A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C53671C828F1600264C7A /* Model.xcdatamodeld */; };
 		9C5C53AD1C82926800264C7A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C53AC1C82926800264C7A /* Store.swift */; };
 		9C748EEB1C87E4090087941E /* WeatherSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C748EEA1C87E4090087941E /* WeatherSegue.swift */; };
@@ -210,6 +213,10 @@
 		9C214F541C76923200F3C38C /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		9C214F551C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		9C214F561C76923200F3C38C /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		9C4D6E5D1C9160040035B4E3 /* Hist+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hist+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9C4D6E5E1C9160040035B4E3 /* Hist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hist.swift; sourceTree = "<group>"; };
+		9C4D6E821C9165340035B4E3 /* HistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistTableViewCell.swift; sourceTree = "<group>"; };
+		9C4D6E841C916ED80035B4E3 /* NSDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extensions.swift"; sourceTree = "<group>"; };
 		9C5C53681C828F1600264C7A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9C5C53AC1C82926800264C7A /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9C748EEA1C87E4090087941E /* WeatherSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSegue.swift; sourceTree = "<group>"; };
@@ -281,27 +288,21 @@
 		9C0935641C730F8D00E9078C /* Opportunity */ = {
 			isa = PBXGroup;
 			children = (
-				9C11147C1C8F62DE00839466 /* craft */,
 				9C0935751C730F8D00E9078C /* Info.plist */,
-				9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */,
 				9C0935651C730F8D00E9078C /* AppDelegate.swift */,
 				9C8E99531C857DEE00AF522F /* Background.swift */,
 				9C8E99551C85884B00AF522F /* ConditionParser.swift */,
-				9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */,
-				9C09360E1C73D96900E9078C /* CreateOppViewController.swift */,
-				9C0935FD1C731B6F00E9078C /* ListViewController.swift */,
 				9C1E13951C8EC31B009EAD0B /* Location.swift */,
-				9C0936171C74022200E9078C /* OppsViewController.swift */,
-				9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */,
+				9C4D6E841C916ED80035B4E3 /* NSDate+Extensions.swift */,
 				9C8E99431C84009500AF522F /* RangeSlider.swift */,
-				9C0936111C73F8BD00E9078C /* SettingsViewController.swift */,
-				9C0936141C74005700E9078C /* SplitViewController.swift */,
 				9C5C53AC1C82926800264C7A /* Store.swift */,
 				9C0936001C73D28B00E9078C /* Styles.swift */,
 				9C0DCAC81C82A0D700FD2FF5 /* Test.swift */,
-				9C0935F41C7317BC00E9078C /* WelcomeViewController.swift */,
 				9C09360B1C73D49F00E9078C /* Assets.xcassets */,
+				9C4D6E801C9165010035B4E3 /* Cells */,
 				9C8E99571C85984D00AF522F /* ConditionViews */,
+				9C4D6E811C91651D0035B4E3 /* Controllers */,
+				9C11147C1C8F62DE00839466 /* craft */,
 				9CAF37571C82969B00AE24F0 /* Data Objects */,
 				9C0935971C7311B200E9078C /* Fonts */,
 				9C0935721C730F8D00E9078C /* LaunchScreen.storyboard */,
@@ -415,6 +416,30 @@
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		9C4D6E801C9165010035B4E3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */,
+				9C0DCACC1C82A6BE00FD2FF5 /* OppTableViewCell.swift */,
+				9C4D6E821C9165340035B4E3 /* HistTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		9C4D6E811C91651D0035B4E3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */,
+				9C09360E1C73D96900E9078C /* CreateOppViewController.swift */,
+				9C0935FD1C731B6F00E9078C /* ListViewController.swift */,
+				9C0936171C74022200E9078C /* OppsViewController.swift */,
+				9C0936111C73F8BD00E9078C /* SettingsViewController.swift */,
+				9C0936141C74005700E9078C /* SplitViewController.swift */,
+				9C0935F41C7317BC00E9078C /* WelcomeViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		9C8E99571C85984D00AF522F /* ConditionViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +458,8 @@
 				9C8E99401C83F64000AF522F /* Condition.swift */,
 				9C8E99491C84FA6D00AF522F /* Opp+CoreDataProperties.swift */,
 				9C8E994A1C84FA6D00AF522F /* Opp.swift */,
+				9C4D6E5D1C9160040035B4E3 /* Hist+CoreDataProperties.swift */,
+				9C4D6E5E1C9160040035B4E3 /* Hist.swift */,
 			);
 			name = "Data Objects";
 			sourceTree = "<group>";
@@ -655,12 +682,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4D6E851C916ED80035B4E3 /* NSDate+Extensions.swift in Sources */,
 				9C0935C01C73129800E9078C /* BlurView.swift in Sources */,
 				9C8E994C1C84FA6D00AF522F /* Opp.swift in Sources */,
 				9C1114861C8F62DE00839466 /* Promise.swift in Sources */,
 				9C0935D41C73129800E9078C /* KeyboardLayoutConstraint.swift in Sources */,
 				9C0935EA1C73129800E9078C /* SpringTextView.swift in Sources */,
 				9C0DCACD1C82A6BE00FD2FF5 /* OppTableViewCell.swift in Sources */,
+				9C4D6E5F1C9160040035B4E3 /* Hist+CoreDataProperties.swift in Sources */,
 				9C0935BA1C73129800E9078C /* AsyncButton.swift in Sources */,
 				9C1E13961C8EC31B009EAD0B /* Location.swift in Sources */,
 				9C0935CC1C73129800E9078C /* DesignableTextView.swift in Sources */,
@@ -669,6 +698,7 @@
 				9C0935E61C73129800E9078C /* SpringLabel.swift in Sources */,
 				9C8E994B1C84FA6D00AF522F /* Opp+CoreDataProperties.swift in Sources */,
 				9C214F571C76923200F3C38C /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				9C4D6E831C9165340035B4E3 /* HistTableViewCell.swift in Sources */,
 				9C5C53691C828F1600264C7A /* Model.xcdatamodeld in Sources */,
 				9C0935BE1C73129800E9078C /* AutoTextView.swift in Sources */,
 				9C0935E01C73129800E9078C /* SpringAnimation.swift in Sources */,
@@ -715,6 +745,7 @@
 				9C8E99411C83F64000AF522F /* Condition+CoreDataProperties.swift in Sources */,
 				9C1114871C8F62DE00839466 /* SettledResult.swift in Sources */,
 				9C8E99481C8425D000AF522F /* ConditionViewController.swift in Sources */,
+				9C4D6E601C9160040035B4E3 /* Hist.swift in Sources */,
 				9C1114841C8F62DE00839466 /* Deferred.swift in Sources */,
 				9C0935DE1C73129800E9078C /* Spring.swift in Sources */,
 			);
@@ -760,7 +791,6 @@
 				9C0935EB1C73129800E9078C /* SpringTextView.swift in Sources */,
 				9C0935D51C73129800E9078C /* KeyboardLayoutConstraint.swift in Sources */,
 				9C0935C51C73129800E9078C /* DesignableImageView.swift in Sources */,
-				9C0936131C73F8BD00E9078C /* SettingsViewController.swift in Sources */,
 				9C0935DD1C73129800E9078C /* SoundPlayer.swift in Sources */,
 				9C0935E11C73129800E9078C /* SpringAnimation.swift in Sources */,
 				9C0935F31C73129800E9078C /* UnwindSegue.swift in Sources */,

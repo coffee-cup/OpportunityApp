@@ -14,6 +14,7 @@ import AlecrimCoreData
 extension DataContext {
     var opps:      Table<Opp>     { return Table<Opp>(dataContext: self) }
     var conditions:      Table<Condition>     { return Table<Condition>(dataContext: self) }
+    var hists:      Table<Hist>     { return Table<Hist>(dataContext: self) }
 }
 
 class Store {
@@ -31,6 +32,8 @@ class Store {
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     }
     
+    // Return all opps with optional sort descriptor
+    // defaults to sort by name
     func getOpps(sortDesc: String = "Name") -> [Opp] {
         if sortDesc == "Colour" {
             return dataContext.opps.sort {$0.colour < $1.colour}
@@ -52,6 +55,7 @@ class Store {
 //        opp.conditions = conditions
     }
     
+    // Create and Opp
     func createOpp(name: String, colour: UIColor, conditions: [Condition]) -> Opp {
         let opp = dataContext.opps.createEntity()
         setOppValues(opp, name: name, colour: colour, conditions: conditions)
@@ -71,6 +75,7 @@ class Store {
     // set last triggered time of opp to now
     func setLastTriggered(opp: Opp) {
         opp.lastTriggered = NSDate()
+        createHist(opp)
         save()
     }
     
@@ -90,11 +95,13 @@ class Store {
         save()
     }
     
+    // Set a single opp as read
     func setOppRead(opp: Opp) {
         opp.read = 1
         save()
     }
     
+    // Mark all opps as read
     func markOppsRead() {
         for opp in getOpps() {
             opp.read = 1
@@ -144,6 +151,23 @@ class Store {
         condition.message = message
     }
     
+    // returns opp trigger history
+    func getTriggerHistory() -> [Hist] {
+        return dataContext.hists.sort {
+            $0.dateTriggered!.isGreaterThanDate($1.dateTriggered!)
+        }
+    }
+    
+    // Creates a Opp history object
+    // and sets the trigger time to now
+    func createHist(opp: Opp) {
+        let hist = dataContext.hists.createEntity()
+        hist.name = opp.name!
+        hist.dateTriggered = NSDate()
+        save()
+    }
+    
+    // Save data context to persist data
     func save() {
         do {
             try dataContext.save()
