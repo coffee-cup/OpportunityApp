@@ -386,7 +386,7 @@
                                 <rect key="frame" x="0.0" y="216" width="375" height="451"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="conditionCell" rowHeight="80" id="pHu-9L-5Dd" customClass="CondTableViewCell" customModule="Opportunity" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="conditionCell" rowHeight="80" id="pHu-9L-5Dd" customClass="CondTableViewCell" customModule="Opportunity" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pHu-9L-5Dd" id="uQs-bJ-PG1">
@@ -405,7 +405,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="l14-fp-N3l">
+                                                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin_grey" translatesAutoresizingMaskIntoConstraints="NO" id="l14-fp-N3l" customClass="DesignableImageView" customModule="Opportunity" customModuleProvider="target">
                                                     <rect key="frame" x="319" y="39" width="26" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="RrX-5s-87i"/>
@@ -435,9 +435,10 @@
                                                 <constraint firstItem="C7n-1E-ClE" firstAttribute="top" secondItem="fGG-lN-EJf" secondAttribute="bottom" constant="10" id="yAE-fV-jLX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="separatorInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="iconImageView" destination="l14-fp-N3l" id="vdm-aW-9ju"/>
+                                            <outlet property="iconImageView" destination="l14-fp-N3l" id="g9c-y4-Ybt"/>
                                             <outlet property="messageLabel" destination="C7n-1E-ClE" id="bCN-XF-S6s"/>
                                             <outlet property="typeLabel" destination="fGG-lN-EJf" id="Szr-Ez-Y0O"/>
                                         </connections>
@@ -580,7 +581,7 @@
         <!--Weather-->
         <scene sceneID="0oD-sp-aBf">
             <objects>
-                <viewController title="Weather" id="N7k-Jv-3Y6" customClass="WeatherSegue" customModule="Opportunity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Weather" id="N7k-Jv-3Y6" customClass="WeatherViewController" customModule="Opportunity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LNH-Gp-U1u"/>
                         <viewControllerLayoutGuide type="bottom" id="2fn-6M-f5A"/>
@@ -787,7 +788,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="1Rx-fV-lmk">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clouds_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="1Rx-fV-lmk">
                                         <rect key="frame" x="291" y="0.0" width="24" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="4qo-fg-7RL"/>
@@ -992,6 +993,13 @@
                                     <constraint firstAttribute="width" constant="1" id="W30-Cu-qc0"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="ooE-n0-sg5">
+                                <rect key="frame" x="325" y="115" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="TeP-EJ-kzx"/>
+                                    <constraint firstAttribute="width" constant="20" id="xXM-e8-GLI"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1004,10 +1012,12 @@
                             <constraint firstItem="oM9-g8-eQG" firstAttribute="leading" secondItem="Uzh-Ib-d23" secondAttribute="leading" constant="30" id="819-r7-uDB"/>
                             <constraint firstItem="11e-Qw-ffB" firstAttribute="leading" secondItem="Uzh-Ib-d23" secondAttribute="leading" constant="10" id="APR-kP-5YZ"/>
                             <constraint firstItem="1oQ-hG-8aL" firstAttribute="centerY" secondItem="Rfk-jr-c14" secondAttribute="centerY" id="I0y-J0-PyK"/>
+                            <constraint firstAttribute="trailing" secondItem="ooE-n0-sg5" secondAttribute="trailing" constant="30" id="IH8-iQ-h9n"/>
                             <constraint firstItem="11e-Qw-ffB" firstAttribute="top" secondItem="pK1-fI-o1m" secondAttribute="top" id="NiL-VI-Rge"/>
                             <constraint firstItem="dZL-na-xCs" firstAttribute="leading" secondItem="eHs-Wm-gZq" secondAttribute="trailing" constant="60" id="Oge-8H-9bZ"/>
                             <constraint firstItem="Rfk-jr-c14" firstAttribute="leading" secondItem="eSk-64-GyX" secondAttribute="leading" id="Qe6-5Q-UEC"/>
                             <constraint firstAttribute="trailing" secondItem="SPL-Iu-nIJ" secondAttribute="trailing" constant="30" id="QiW-we-sB7"/>
+                            <constraint firstItem="ooE-n0-sg5" firstAttribute="centerY" secondItem="Qnu-Z1-K3B" secondAttribute="centerY" id="Rj8-0l-o0k"/>
                             <constraint firstItem="iij-H0-lmd" firstAttribute="leading" secondItem="Uzh-Ib-d23" secondAttribute="leading" constant="30" id="WL5-B7-tq9"/>
                             <constraint firstItem="Qnu-Z1-K3B" firstAttribute="centerY" secondItem="eHs-Wm-gZq" secondAttribute="centerY" id="WSP-Fn-az7"/>
                             <constraint firstItem="eHs-Wm-gZq" firstAttribute="top" secondItem="eSk-64-GyX" secondAttribute="bottom" id="XD2-0G-ldc"/>
@@ -1039,15 +1049,20 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="cloudsButton" destination="9CN-w4-uLd" id="Og2-JS-qAB"/>
+                        <outlet property="cloudsImageView" destination="1Rx-fV-lmk" id="wsL-z7-dn4"/>
                         <outlet property="cloudsView" destination="SPL-Iu-nIJ" id="cm2-Nk-i9E"/>
                         <outlet property="greaterThanButton" destination="dZL-na-xCs" id="REq-uR-YHt"/>
                         <outlet property="lessThanButton" destination="eHs-Wm-gZq" id="bqj-F0-jvi"/>
                         <outlet property="rainButton" destination="0R4-RM-sgt" id="7Nj-0o-khp"/>
+                        <outlet property="rainImageView" destination="1dm-88-fDM" id="P7o-zt-aaT"/>
                         <outlet property="rainView" destination="oM9-g8-eQG" id="16M-M0-1n8"/>
                         <outlet property="snowButton" destination="SiA-gh-CGD" id="Mds-Wg-v7V"/>
+                        <outlet property="snowImageView" destination="gds-aR-YLj" id="V3e-EX-ZZY"/>
                         <outlet property="snowView" destination="pan-PF-Njj" id="9re-hS-5cI"/>
                         <outlet property="sunButton" destination="GEH-Lb-Mi6" id="Xfd-8S-rqn"/>
+                        <outlet property="sunImageView" destination="fMv-mg-mzF" id="T70-TE-ONN"/>
                         <outlet property="sunView" destination="pK1-fI-o1m" id="dCZ-1v-WzC"/>
+                        <outlet property="tempIconView" destination="ooE-n0-sg5" id="SeL-S8-v3P"/>
                         <outlet property="tempertureButton" destination="Qnu-Z1-K3B" id="bqz-KC-cbu"/>
                         <outlet property="tempertureLabel" destination="1oQ-hG-8aL" id="naN-XB-bCt"/>
                         <outlet property="tempertureSlider" destination="Rfk-jr-c14" id="0v2-bE-qSf"/>
@@ -1554,19 +1569,19 @@
     <resources>
         <image name="add" width="24" height="25"/>
         <image name="cal_grey" width="38" height="36"/>
-        <image name="cal_yellow" width="62" height="60"/>
+        <image name="cal_yellow" width="38" height="36"/>
         <image name="check" width="23" height="17"/>
         <image name="clock_yellow" width="36" height="36"/>
         <image name="close" width="19" height="19"/>
-        <image name="cloud_yellow" width="36" height="26"/>
+        <image name="clouds_yellow" width="36" height="26"/>
         <image name="logo" width="300" height="300"/>
         <image name="pin_grey" width="21" height="36"/>
-        <image name="pin_yellow" width="21" height="36"/>
         <image name="rain_grey" width="33" height="36"/>
-        <image name="rain_yellow" width="33" height="36"/>
+        <image name="rain_yellow" width="34" height="36"/>
         <image name="snow_yellow" width="32" height="36"/>
         <image name="sort" width="24" height="25"/>
         <image name="sun_yellow" width="36" height="36"/>
+        <image name="temp_yellow" width="17" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PdT-d9-iAS"/>

@@ -17,6 +17,9 @@ let colour5 = Sweetercolor(hex: 0x5D2E8C).color
 
 let greenColour = colour1
 let purpleColour = colour2
+let yellowColour = colour3
+let pinkColour = colour4
+let darkpurpleColour = colour5
 
 extension UIColor {
     convenience init(hexString:String) {

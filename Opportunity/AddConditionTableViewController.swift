@@ -32,6 +32,7 @@ class AddConditionTableViewController: UITableViewController {
     ]
 //    let conditions = ["Time Range", "Weather", "Location", "Availbility", "Event"]
     var opp: Opp?
+    var colour: UIColor?
     
     var delegate: CreateConditionDelegate?
     
@@ -141,6 +142,7 @@ class AddConditionTableViewController: UITableViewController {
         let toView = segue.destinationViewController
         if let conditionView = toView as? ConditionViewController {
             conditionView.delegate = delegate
+            conditionView.colour = colour!
         }
     }
 

@@ -13,6 +13,7 @@ class ConditionViewController: UIViewController {
     var delegate: CreateConditionDelegate?
 
     var condition: Condition?
+    var colour: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()

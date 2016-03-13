@@ -33,4 +33,17 @@ class OpportunityTests: XCTestCase {
         }
     }
     
+    func testCreateOpp() {
+        let store = Store()
+        
+        XCTAssertEqual(store.getOpps().count, 0)
+        store.createOpp("test opp", colour: UIColor.whiteColor(), conditions: [])
+        
+        let opps = store.getOpps()
+        XCTAssertEqual(opps.count, 1)
+        
+        XCTAssertEqual(opps[0].name!, "test opp")
+        XCTAssertEqual(opps[0].colour!, UIColor.whiteColor())
+    }
+    
 }

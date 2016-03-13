@@ -159,6 +159,8 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
             self.colourButton.backgroundColor = self.colours[self.colourIndex];
         })
         
+        self.tableView.reloadData()
+        
     }
     
     // MARK : Tableview
@@ -208,6 +210,10 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
             if let condCell = cell as? CondTableViewCell {
                 condCell.typeLabel.text = cond.type!.uppercaseString
                 condCell.messageLabel.text = cond.message!
+                condCell.iconImageView.image = Condition.getIconForCondition(cond, colour: colourButton.backgroundColor!)
+                condCell.iconImageView.animation = "fadeIn"
+                condCell.iconImageView.duration = 0.250
+                condCell.iconImageView.animate()
             }
         }
         return cell
@@ -231,6 +237,7 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
             addConditionView.opp = opp!
         } else if let conditionView = toView as? ConditionViewController {
             conditionView.delegate = self
+            conditionView.colour = colourButton.backgroundColor!
             if let cond = sender as? Condition {
                 conditionView.condition = cond
             }

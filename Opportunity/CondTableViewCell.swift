@@ -12,7 +12,7 @@ class CondTableViewCell: UITableViewCell {
 
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var iconImageView: DesignableImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
