@@ -235,6 +235,7 @@ class CreateOppViewController: UIViewController, UITableViewDataSource, UITableV
         if let addConditionView = toView as? AddConditionTableViewController {
             addConditionView.delegate = self
             addConditionView.opp = opp!
+            addConditionView.colour = colourButton.backgroundColor!
         } else if let conditionView = toView as? ConditionViewController {
             conditionView.delegate = self
             conditionView.colour = colourButton.backgroundColor!
