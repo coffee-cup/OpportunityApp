@@ -60,7 +60,12 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
         }
     
         if condition != nil {
-            
+            let mapPin = ConditionParser.parseLocation(condition!.value!)
+            self.selectedPoint = mapPin
+            self.searchTextField.text = mapPin.fulltitle!
+            self.centerMapOnCoordinate(mapPin.coordinate)
+            self.mapView.addAnnotation(mapPin)
+            firstSet = true
         }
         
         configureTextField()
@@ -105,10 +110,20 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
         }
     }
     
-    func getCoordinateForAddress(search: String, completion: (()->())?) {
+    func getCoordinateForAddress(text: String, completion: (()->())?) {
+        var search = text
+        var title = text
+        var subtitle = ""
+        if text.containsString("-") {
+            let values = text.componentsSeparatedByString("-")
+            title = values[0]
+            subtitle = values[1]
+            search = subtitle
+        }
+        
         Location.geocodeAddressString(search, completion: { (placemark, error) -> Void in
-            if let coordinate = placemark?.location?.coordinate{
-                let annotation = MapPin(coordinate: coordinate, title: search, subtitle: "")
+            if let coordinate = placemark?.location?.coordinate {
+                let annotation = MapPin(coordinate: coordinate, title: title, subtitle: subtitle)
                 if self.selectedPoint != nil {
                     self.mapView.removeAnnotation(self.selectedPoint!)
                 }
@@ -118,6 +133,7 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
                 self.mapView.addAnnotation(annotation)
                 self.centerMapOnCoordinate(coordinate)
                 self.selectedPoint = annotation
+                self.searchTextField.text = self.selectedPoint!.fulltitle!
                 self.searchTextField.autoCompleteStrings = nil
                 
                 if completion != nil {
@@ -229,17 +245,19 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
     
     override func createCondition() {
         let completion: ()->() = {
-            let value = "\(self.selectedPoint!.title) - \(self.selectedPoint!.subtitle)|\(self.selectedPoint!.coordinate.latitude)|\(self.selectedPoint!.coordinate.longitude)"
+            let value = "\(self.selectedPoint!.fulltitle!)|\(self.selectedPoint!.coordinate.latitude)|\(self.selectedPoint!.coordinate.longitude)"
             let message = "\(self.selectedPoint!.fulltitle!)"
+            print(value)
             self.createUpdateCondition(LOCATION, value: value, message: message)
         }
         
+        if self.selectedPoint == nil || self.searchTextField.text! == "" {
+            self.addressLabel.animation = "shake"
+            self.addressLabel.animate()
+            return
+        }
+        
         if selectedPoint == nil {
-            if self.selectedPoint == nil || self.searchTextField.text! == "" {
-                self.addressLabel.animation = "shake"
-                self.addressLabel.animate()
-                return
-            }
             getCoordinateForAddress(searchTextField.text!, completion: completion)
         } else {
             completion()

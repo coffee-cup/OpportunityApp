@@ -527,6 +527,7 @@
                         <segue destination="RN6-Fj-oQM" kind="show" identifier="TimeRangeSegue" id="PdT-d9-iAS"/>
                         <segue destination="N7k-Jv-3Y6" kind="show" identifier="WeatherSegue" id="4ZL-9X-l0O"/>
                         <segue destination="rQW-yE-NMZ" kind="show" identifier="AvailbilitySegue" id="pbp-Ot-1JI"/>
+                        <segue destination="ZVi-OQ-DMJ" kind="show" identifier="LocationSegue" id="2Ku-Q4-lkb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHB-Q4-hSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1537,8 +1538,9 @@
         <image name="temp_yellow" width="17" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PdT-d9-iAS"/>
         <segue reference="4ZL-9X-l0O"/>
         <segue reference="pbp-Ot-1JI"/>
+        <segue reference="PdT-d9-iAS"/>
+        <segue reference="2Ku-Q4-lkb"/>
     </inferredMetricsTieBreakers>
 </document>

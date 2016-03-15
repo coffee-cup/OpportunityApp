@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class ConditionParser {
     
@@ -36,5 +37,22 @@ class ConditionParser {
         }
         
         return (sign, temp, sky)
+    }
+    
+    class func parseLocation(value: String) -> MapPin {
+        let values = value.componentsSeparatedByString("|")
+        var fulltitle = values[0]
+        var title = ""
+        var subtitle = ""
+        if values[0].containsString("-") {
+            let aValues = values[0].componentsSeparatedByString("-")
+            title = aValues[0]
+            subtitle = aValues[1]
+        } else {
+            title = fulltitle
+        }
+        let coord = CLLocationCoordinate2D(latitude: Double(values[1])!, longitude: Double(values[2])!)
+        let mapPin = MapPin(coordinate: coord, title: title, subtitle: subtitle)
+        return mapPin
     }
 }
