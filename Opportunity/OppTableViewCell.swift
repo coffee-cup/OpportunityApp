@@ -15,7 +15,6 @@ class OppTableViewCell: UITableViewCell {
     @IBOutlet weak var lastTriggeredLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stackWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var iconView: UIView!
     
     var opp: Opp? {
         didSet {

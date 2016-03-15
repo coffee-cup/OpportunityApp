@@ -1,87 +1,73 @@
 //
 //  Location.swift
-//  Opportunity
+//  AutocompleteTextfieldSwift
 //
-//  Created by Jake Runzer on 2016-03-08.
-//  Copyright © 2016 FixCode. All rights reserved.
+//  Created by Mylene Bayan on 2/22/15.
+//  Copyright (c) 2015 MaiLin. All rights reserved.
 //
 
-// OneShotLocationManager - fetches the current device location once and invokes a completion closure
-
-import UIKit
+import Foundation
 import CoreLocation
 
-//possible errors
-enum OneShotLocationManagerErrors: Int {
-    case AuthorizationDenied
-    case AuthorizationNotDetermined
-    case InvalidLocation
-}
-
-class Location: NSObject, CLLocationManagerDelegate {
+class Location{
     
-    //location manager
-    private var locationManager: CLLocationManager?
-    
-    //destroy the manager
-    deinit {
-        locationManager?.delegate = nil
-        locationManager = nil
+    class func geocodeAddressString(address:String, completion:(placemark:CLPlacemark?, error:NSError?)->Void){
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) -> Void in
+            if error == nil{
+                if placemarks?.count > 0{
+                    completion(placemark: (placemarks?[0]), error: error)
+                }
+            }
+            else{
+                completion(placemark: nil, error: error)
+            }
+        })
     }
     
-    typealias LocationClosure = ((location: CLLocation?, error: NSError?)->())
-    private var didComplete: LocationClosure?
-    
-    //location manager returned, call didcomplete closure
-    private func _didComplete(location: CLLocation?, error: NSError?) {
-        locationManager?.stopUpdatingLocation()
-        didComplete?(location: location, error: error)
-        locationManager?.delegate = nil
-        locationManager = nil
+    class func reverseGeocodeLocation(location:CLLocation,completion:(placemark:CLPlacemark?, error:NSError?)->Void){
+        let geoCoder = CLGeocoder()
+        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
+            if let err = error{
+                print("Error Reverse Geocoding Location: \(err.localizedDescription)")
+                completion(placemark: nil, error: error)
+                return
+            }
+            completion(placemark: placemarks?[0], error: nil)
+            
+        })
     }
     
-    //location authorization status changed
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    class func addressFromPlacemark(placemark:CLPlacemark)->String{
+        var address = ""
+        let name = placemark.addressDictionary?["Name"] as? String
+        let city = placemark.addressDictionary?["City"] as? String
+        let state = placemark.addressDictionary?["State"] as? String
+        let country = placemark.country
         
-        switch status {
-        case .AuthorizedWhenInUse:
-            self.locationManager!.startUpdatingLocation()
-        case .Denied:
-            _didComplete(nil, error: NSError(domain: self.classForCoder.description(),
-                code: OneShotLocationManagerErrors.AuthorizationDenied.rawValue,
-                userInfo: nil))
-        default:
-            break
+        if name != nil{
+            address = constructAddressString(address, newString: name!)
         }
+        if city != nil{
+            address = constructAddressString(address, newString: city!)
+        }
+        if state != nil{
+            address = constructAddressString(address, newString: state!)
+        }
+        if country != nil{
+            address = constructAddressString(address, newString: country!)
+        }
+        return address
     }
     
-    internal func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        _didComplete(nil, error: error)
-    }
-    
-    internal func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        _didComplete(location, error: nil)
-    }
-    
-    //ask for location permissions, fetch 1 location, and return
-    func fetchWithCompletion(completion: LocationClosure) {
-        //store the completion closure
-        didComplete = completion
-        
-        //fire the location manager
-        locationManager = CLLocationManager()
-        locationManager!.delegate = self
-        locationManager?.startUpdatingLocation()
-        
-        //check for description key and ask permissions
-//        if (NSBundle.mainBundle().objectForInfoDictionaryKey("NSLocationWhenInUseUsageDescription") != nil) {
-//            locationManager!.requestWhenInUseAuthorization()
-//        } else if (NSBundle.mainBundle().objectForInfoDictionaryKey("NSLocationAlwaysUsageDescription") != nil) {
-//            locationManager!.requestAlwaysAuthorization()
-//        } else {
-//            fatalError("To use location in iOS8 you need to define either NSLocationWhenInUseUsageDescription or NSLocationAlwaysUsageDescription in the app bundle's Info.plist file")
-//        }
-        
+    private class func constructAddressString(string:String, newString:String)->String{
+        var address = string
+        if !address.isEmpty{
+            address = address.stringByAppendingString(", \(newString)")
+        }
+        else{
+            address = address.stringByAppendingString(newString)
+        }
+        return address
     }
 }

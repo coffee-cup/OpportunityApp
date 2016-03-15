@@ -18,11 +18,11 @@ class AddConditionTableViewController: UITableViewController {
         [
             "type": "Weather",
             "disabled": false
+        ],
+        [
+            "type": "Location",
+            "disabled": false
         ]
-//        [
-//            "type": "Location",
-//            "disabled": false
-//        ],        [
 //            "type": "Availbility",
 //            "disabled": false
 //        ],        [

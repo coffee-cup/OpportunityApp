@@ -118,6 +118,7 @@
 		9C8E99521C85326A00AF522F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8E99511C85326A00AF522F /* MapKit.framework */; };
 		9C8E99541C857DEE00AF522F /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99531C857DEE00AF522F /* Background.swift */; };
 		9C8E99561C85884C00AF522F /* ConditionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E99551C85884B00AF522F /* ConditionParser.swift */; };
+		9C9765601C97433200B929A4 /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C97655F1C97433200B929A4 /* AutoCompleteTextField.swift */; };
 		9CACEB291C7FCB8000C4B5E7 /* CondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */; };
 		9CACEB2B1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */; };
 		B17EF11E8E3124B455A9B65C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59C88E14EBACAFE80395B892 /* Pods.framework */; };
@@ -231,6 +232,7 @@
 		9C8E99511C85326A00AF522F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9C8E99531C857DEE00AF522F /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		9C8E99551C85884B00AF522F /* ConditionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionParser.swift; sourceTree = "<group>"; };
+		9C97655F1C97433200B929A4 /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		9CACEB281C7FCB8000C4B5E7 /* CondTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CondTableViewCell.swift; sourceTree = "<group>"; };
 		9CACEB2A1C7FCFF500C4B5E7 /* AddConditionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConditionTableViewController.swift; sourceTree = "<group>"; };
 		CD24823CC7B2D22D5E7689E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		9C0935641C730F8D00E9078C /* Opportunity */ = {
 			isa = PBXGroup;
 			children = (
+				9C97655E1C97433200B929A4 /* AutoCompleteTextField */,
 				9C0935751C730F8D00E9078C /* Info.plist */,
 				9C0935651C730F8D00E9078C /* AppDelegate.swift */,
 				9C8E99531C857DEE00AF522F /* Background.swift */,
@@ -449,6 +452,14 @@
 				9C748EEA1C87E4090087941E /* WeatherViewController.swift */,
 			);
 			name = ConditionViews;
+			sourceTree = "<group>";
+		};
+		9C97655E1C97433200B929A4 /* AutoCompleteTextField */ = {
+			isa = PBXGroup;
+			children = (
+				9C97655F1C97433200B929A4 /* AutoCompleteTextField.swift */,
+			);
+			path = AutoCompleteTextField;
 			sourceTree = "<group>";
 		};
 		9CAF37571C82969B00AE24F0 /* Data Objects */ = {
@@ -743,6 +754,7 @@
 				9C0935D61C73129800E9078C /* LoadingView.swift in Sources */,
 				9CACEB291C7FCB8000C4B5E7 /* CondTableViewCell.swift in Sources */,
 				9C8E99411C83F64000AF522F /* Condition+CoreDataProperties.swift in Sources */,
+				9C9765601C97433200B929A4 /* AutoCompleteTextField.swift in Sources */,
 				9C1114871C8F62DE00839466 /* SettledResult.swift in Sources */,
 				9C8E99481C8425D000AF522F /* ConditionViewController.swift in Sources */,
 				9C4D6E601C9160040035B4E3 /* Hist.swift in Sources */,
