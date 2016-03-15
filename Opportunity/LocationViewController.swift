@@ -30,8 +30,9 @@ class MapPin : NSObject, MKAnnotation {
 }
 
 class LocationViewController: ConditionViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-
+    
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var mapBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var addressLabel: DesignableLabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchTextField: AutoCompleteTextField!
@@ -44,6 +45,7 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
     var selectedPoint: MapPin?
     
     var firstSet = false
+    let MAP_ANIMATION = 0.500
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +60,8 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
-    
+        
+        // set values if we are editing an existing condition
         if condition != nil {
             let mapPin = ConditionParser.parseLocation(condition!.value!)
             self.selectedPoint = mapPin
@@ -68,20 +71,41 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
             firstSet = true
         }
         
+        // configure auto complete
         configureTextField()
         self.searchTextField.autoCompleteStrings = nil
         handleTextFieldInterfaces()
         
-        self.searchTextField.becomeFirstResponder()
+        // get keyboard height when it comes up
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "keyboardWillShow:",
+            name: UIKeyboardWillShowNotification,
+            object: nil
+        )
         
-//        addRadiusCircle(initialLocation)
-
+        // hide keyboard on tap
+        let tapGesture = UITapGestureRecognizer(target: self, action: "hideKeyboard")
+        mapView.addGestureRecognizer(tapGesture)
+        
+        //        addRadiusCircle(initialLocation)
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        let frame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        self.mapBottomConstraint.constant = frame.height
+        UIView.animateWithDuration(MAP_ANIMATION, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+            }, completion: {finished in
+                self.mapFitAllPoints()
+        })
     }
     
     private func configureTextField(){
@@ -158,24 +182,30 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
             
             var searchStrings = [String]()
             
+            if self.selectedPoint != nil {
+                self.mapView.removeAnnotation(self.selectedPoint!)
+            }
             self.mapView.removeAnnotations(self.currentAnnotations)
             self.currentAnnotations.removeAll()
             
-            for item in response.mapItems {
-//                print(item.placemark.addressDictionary!)
-//                searchStrings.append(item.name!)
-                let addressString = item.name!
-                var street = item.placemark.addressDictionary!["Street"] != nil ? item.placemark.addressDictionary!["Street"]! : ""
-                if street as! String == addressString {
-                    street = ""
+            if text != "" {
+                for item in response.mapItems {
+                    //                print(item.placemark.addressDictionary!)
+                    //                searchStrings.append(item.name!)
+                    let addressString = item.name!
+                    var street = item.placemark.addressDictionary!["Street"] != nil ? item.placemark.addressDictionary!["Street"]! : ""
+                    if street as! String == addressString {
+                        street = ""
+                    }
+                    
+                    let annotation = MapPin(coordinate: item.placemark.coordinate, title: addressString, subtitle: street as! String)
+                    searchStrings.append(annotation.fulltitle!)
+                    self.mapView.addAnnotation(annotation)
+                    self.currentAnnotations.append(annotation)
                 }
-                
-                let annotation = MapPin(coordinate: item.placemark.coordinate, title: addressString, subtitle: street as! String)
-                searchStrings.append(annotation.fulltitle!)
-                self.mapView.addAnnotation(annotation)
-                self.currentAnnotations.append(annotation)
+                self.mapFitAllPoints()
+                self.searchTextField.autoCompleteStrings = searchStrings
             }
-            self.searchTextField.autoCompleteStrings = searchStrings
         })
     }
     
@@ -185,7 +215,7 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
             centerMapOnLocation(location)
             firstSet = true
         }
-//        centerMapOnLocation(location)
+        //        centerMapOnLocation(location)
     }
     
     func centerMapOnCoordinate(coordinate: CLLocationCoordinate2D) {
@@ -203,6 +233,22 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
         self.mapView.addOverlay(circle)
     }
     
+    func mapFitAllPoints() {
+        var zoomRect = MKMapRectNull
+        for annotation in mapView.annotations {
+            let annotationPoint = MKMapPointForCoordinate(annotation.coordinate)
+            let pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0, 0)
+            if MKMapRectIsNull(zoomRect) {
+                zoomRect = pointRect
+            } else {
+                zoomRect = MKMapRectUnion(zoomRect, pointRect)
+            }
+        }
+        if zoomRect.size.width > 100 && zoomRect.size.height > 100 {
+            mapView.setVisibleMapRect(zoomRect, edgePadding: UIEdgeInsets(top: 50, left: 50, bottom: 10, right: 10), animated: true)
+        }
+    }
+    
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKCircle {
             let circle = MKCircleRenderer(overlay: overlay)
@@ -218,8 +264,10 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
             self.mapView.removeAnnotations(self.currentAnnotations)
             self.currentAnnotations.removeAll()
             self.selectedPoint = mapPin
+            self.mapView.addAnnotation(mapPin)
             self.searchTextField.text = mapPin.fulltitle!
             self.searchTextField.autoCompleteStrings = nil
+            self.centerMapOnCoordinate(mapPin.coordinate)
         }
     }
     
@@ -239,7 +287,7 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
         if let annotation = view.annotation as? MapPin {
-//            self.selectedPoint = annotation
+            //            self.selectedPoint = annotation
         }
     }
     
@@ -247,7 +295,6 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
         let completion: ()->() = {
             let value = "\(self.selectedPoint!.fulltitle!)|\(self.selectedPoint!.coordinate.latitude)|\(self.selectedPoint!.coordinate.longitude)"
             let message = "\(self.selectedPoint!.fulltitle!)"
-            print(value)
             self.createUpdateCondition(LOCATION, value: value, message: message)
         }
         
@@ -263,15 +310,26 @@ class LocationViewController: ConditionViewController, CLLocationManagerDelegate
             completion()
         }
     }
-
+    
+    func hideKeyboard() {
+        searchTextField.resignFirstResponder()
+        
+        self.mapBottomConstraint.constant = 0
+        UIView.animateWithDuration(MAP_ANIMATION / 2, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+            }, completion: {finished in
+                self.mapFitAllPoints()
+        })
+    }
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

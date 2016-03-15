@@ -1300,36 +1300,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bVO-3N-Tll">
-                                <rect key="frame" x="0.0" y="64" width="375" height="220"/>
+                                <rect key="frame" x="0.0" y="184" width="375" height="483"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEE-Su-EUK" customClass="DesignableLabel" customModule="Opportunity" customModuleProvider="target">
-                                <rect key="frame" x="30" y="297" width="63" height="20"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <color key="textColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="0.49627850509999999" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BGl-4K-KcF" customClass="AutoCompleteTextField" customModule="Opportunity" customModuleProvider="target">
-                                <rect key="frame" x="30" y="325" width="315" height="25"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes"/>
-                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77m-Fi-Ecd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5S-Qd-Dkg">
+                                        <rect key="frame" x="0.0" y="8" width="375" height="104"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEE-Su-EUK" customClass="DesignableLabel" customModule="Opportunity" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="20" width="73" height="20"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                <color key="textColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="0.49627850509999999" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BGl-4K-KcF" customClass="AutoCompleteTextField" customModule="Opportunity" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="50" width="315" height="25"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="BGl-4K-KcF" firstAttribute="leading" secondItem="c5S-Qd-Dkg" secondAttribute="leading" constant="30" id="7B9-zl-jdC"/>
+                                            <constraint firstItem="TEE-Su-EUK" firstAttribute="leading" secondItem="c5S-Qd-Dkg" secondAttribute="leading" constant="30" id="LAP-Ms-zAT"/>
+                                            <constraint firstItem="TEE-Su-EUK" firstAttribute="top" secondItem="c5S-Qd-Dkg" secondAttribute="top" constant="20" id="Uxx-s7-d6U"/>
+                                            <constraint firstItem="BGl-4K-KcF" firstAttribute="top" secondItem="TEE-Su-EUK" secondAttribute="bottom" constant="10" id="Ybt-JD-0uH"/>
+                                            <constraint firstAttribute="trailing" secondItem="BGl-4K-KcF" secondAttribute="trailing" constant="30" id="e6l-iJ-E6Q"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="c5S-Qd-Dkg" secondAttribute="trailing" id="0Zo-Ul-mH6"/>
+                                    <constraint firstItem="c5S-Qd-Dkg" firstAttribute="top" secondItem="77m-Fi-Ecd" secondAttribute="top" constant="8" id="3yW-8C-w6Z"/>
+                                    <constraint firstAttribute="height" constant="120" id="Peg-V2-P14"/>
+                                    <constraint firstItem="c5S-Qd-Dkg" firstAttribute="leading" secondItem="77m-Fi-Ecd" secondAttribute="leading" id="Rdg-Yv-YYQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="c5S-Qd-Dkg" secondAttribute="bottom" constant="8" id="suF-5w-LRL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bVO-3N-Tll" firstAttribute="top" secondItem="mmb-uz-5pJ" secondAttribute="bottom" id="0Eo-D4-Sv2"/>
-                            <constraint firstItem="TEE-Su-EUK" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" constant="30" id="1ab-Lt-S7K"/>
-                            <constraint firstItem="bVO-3N-Tll" firstAttribute="height" secondItem="44f-ae-0lH" secondAttribute="height" multiplier="0.33" id="4jy-Jb-VfS"/>
-                            <constraint firstItem="BGl-4K-KcF" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" constant="30" id="NYx-hs-Zy4"/>
-                            <constraint firstItem="bVO-3N-Tll" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" id="OFe-bL-2D6"/>
-                            <constraint firstAttribute="trailing" secondItem="bVO-3N-Tll" secondAttribute="trailing" id="g6o-mB-Xkd"/>
-                            <constraint firstItem="TEE-Su-EUK" firstAttribute="top" secondItem="bVO-3N-Tll" secondAttribute="bottom" constant="13" id="kni-Ha-yBL"/>
-                            <constraint firstItem="BGl-4K-KcF" firstAttribute="top" secondItem="TEE-Su-EUK" secondAttribute="bottom" constant="8" id="rX2-be-gEE"/>
-                            <constraint firstAttribute="trailing" secondItem="BGl-4K-KcF" secondAttribute="trailing" constant="30" id="td0-Oy-8Gx"/>
+                            <constraint firstAttribute="trailing" secondItem="77m-Fi-Ecd" secondAttribute="trailing" id="MEJ-e9-J6f"/>
+                            <constraint firstItem="bVO-3N-Tll" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" id="Nhc-pE-sgG"/>
+                            <constraint firstItem="77m-Fi-Ecd" firstAttribute="top" secondItem="mmb-uz-5pJ" secondAttribute="bottom" id="Vbs-fv-b7W"/>
+                            <constraint firstAttribute="trailing" secondItem="bVO-3N-Tll" secondAttribute="trailing" id="ezI-dx-HP8"/>
+                            <constraint firstItem="77m-Fi-Ecd" firstAttribute="leading" secondItem="44f-ae-0lH" secondAttribute="leading" id="jaT-2z-9h5"/>
+                            <constraint firstItem="bVO-3N-Tll" firstAttribute="top" secondItem="77m-Fi-Ecd" secondAttribute="bottom" id="skt-CR-dyW"/>
+                            <constraint firstItem="8dJ-Tz-CPc" firstAttribute="top" secondItem="bVO-3N-Tll" secondAttribute="bottom" id="vTl-qt-F2K"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="addressLabel" destination="TEE-Su-EUK" id="liY-PO-WXd"/>
+                        <outlet property="mapBottomConstraint" destination="vTl-qt-F2K" id="Nwc-VP-Xlk"/>
                         <outlet property="mapView" destination="bVO-3N-Tll" id="Its-g7-LeJ"/>
                         <outlet property="searchTextField" destination="BGl-4K-KcF" id="WkI-QN-tn3"/>
                     </connections>
