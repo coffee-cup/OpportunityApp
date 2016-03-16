@@ -598,7 +598,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQl-TP-kPX">
-                                <rect key="frame" x="60" y="202" width="25" height="20"/>
+                                <rect key="frame" x="80" y="202" width="25" height="20"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="0.45098039220000002" green="0.36078431370000003" blue="0.86666666670000003" alpha="0.49627850509999999" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1028,7 +1028,7 @@
                             <constraint firstItem="eSk-64-GyX" firstAttribute="top" secondItem="LNH-Gp-U1u" secondAttribute="bottom" constant="25" id="fRi-6N-BA3"/>
                             <constraint firstItem="eSk-64-GyX" firstAttribute="leading" secondItem="Uzh-Ib-d23" secondAttribute="leading" constant="80" id="fqo-c1-W6u"/>
                             <constraint firstItem="eHs-Wm-gZq" firstAttribute="leading" secondItem="eSk-64-GyX" secondAttribute="leading" id="gvJ-ep-3Br"/>
-                            <constraint firstItem="uQl-TP-kPX" firstAttribute="leading" secondItem="Uzh-Ib-d23" secondAttribute="leading" constant="60" id="hZm-Qa-cOo"/>
+                            <constraint firstItem="uQl-TP-kPX" firstAttribute="leading" secondItem="Uzh-Ib-d23" secondAttribute="leading" constant="80" id="hZm-Qa-cOo"/>
                             <constraint firstAttribute="trailing" secondItem="pan-PF-Njj" secondAttribute="trailing" constant="30" id="kXb-8F-Ev3"/>
                             <constraint firstAttribute="trailing" secondItem="iij-H0-lmd" secondAttribute="trailing" constant="30" id="m5C-aR-zQc"/>
                             <constraint firstItem="pan-PF-Njj" firstAttribute="leading" secondItem="Uzh-Ib-d23" secondAttribute="leading" constant="30" id="m9R-qO-ff1"/>
